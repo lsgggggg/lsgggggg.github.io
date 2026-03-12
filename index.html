@@ -4,307 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>李时光 | 个人主页</title>
-  <meta name="description" content="李时光个人主页，包含教育背景、实习经历、论文发表、项目经历与技能。" />
+  <meta name="description" content="李时光个人主页" />
   <style>
     :root {
-      --bg: #f7f8fb;
+      --bg: #f5f7fb;
       --card: #ffffff;
-      --border: #e6e9ef;
-      --text: #1f2937;
-      --muted: #667085;
-      --title: #111827;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --title: #0f172a;
       --accent: #2563eb;
       --max: 980px;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.8;
     }
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 36px auto 60px;
+    .wrap {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 28px auto 48px;
     }
     .page {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
     }
     header {
-      padding: 34px 36px 24px;
+      padding: 30px 32px 20px;
       border-bottom: 1px solid var(--border);
     }
     h1 {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       font-size: 34px;
       color: var(--title);
     }
-    .subtitle {
-      margin: 0;
+    .meta {
       color: var(--muted);
-      font-size: 15px;
-    }
-    .contact {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
       font-size: 14px;
-      color: var(--muted);
+      white-space: pre-wrap;
     }
-    .body {
-      padding: 10px 36px 36px;
+    main {
+      padding: 8px 32px 32px;
     }
     section {
       padding-top: 22px;
     }
     h2 {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
       font-size: 22px;
       color: var(--title);
-      padding-bottom: 8px;
-      border-bottom: 2px solid #eef2f7;
     }
-    .item {
-      margin-bottom: 18px;
-    }
-    .item-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 4px;
-    }
-    .item-head h3 {
-      margin: 0;
-      font-size: 18px;
-      color: var(--title);
-    }
-    .date {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .role {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-    li { margin-bottom: 6px; }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .small-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
-      background: #fcfcfd;
-    }
-    .small-card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .tag {
-      background: #eef4ff;
-      color: #1d4ed8;
-      border: 1px solid #dbe7ff;
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 13px;
+    .block {
+      white-space: pre-wrap;
+      font-size: 15px;
     }
     footer {
-      padding: 18px 36px 28px;
       border-top: 1px solid var(--border);
-      color: var(--muted);
+      padding: 18px 32px 24px;
       font-size: 13px;
+      color: var(--muted);
     }
     @media (max-width: 768px) {
-      header, .body, footer { padding-left: 20px; padding-right: 20px; }
-      .grid-2 { grid-template-columns: 1fr; }
+      header, main, footer { padding-left: 18px; padding-right: 18px; }
       h1 { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <div class="page">
       <header>
         <h1>李时光</h1>
-        <p class="subtitle">北京工商大学经济统计学本科生（2027 届）｜关注 AI、数据挖掘、量化研究、时空预测与多模态建模</p>
-        <div class="contact">
-          <span>电话：15311168073</span>
-          <span>邮箱：lishiguang8073@gmail.com</span>
-          <span>户口所在地：北京市朝阳区</span>
-        </div>
+        <div class="meta">电话： 15311168073 | 邮箱： lishiguang8073@gmail.com | 户口所在地：北京市朝阳区</div>
       </header>
-
-      <div class="body">
+      <main>
         <section>
           <h2>教育背景</h2>
-          <div class="item">
-            <div class="item-head">
-              <h3>北京工商大学</h3>
-              <div class="date">2023.09–2027.06</div>
-            </div>
-            <div class="role">经济统计学｜学士｜2027 届</div>
-            <ul>
-              <li>GPA：4.01 / 5.00</li>
-              <li>核心课程：高等数学、概率论与数理统计、线性代数、计量经济学、时间序列分析、回归分析、多元统计分析、非参数统计</li>
-              <li>竞赛奖项：全国大学生统计建模大赛北京市一等奖、WorldQuant 量化投资大赛金牌</li>
-            </ul>
-          </div>
+          <div class="block">北京工商大学 | 经济统计学 | 学士 | 2027 届
+2023.09–2027.06
+▪ GPA ： 4.01 /5.00
+▪ 专业课程 ：高等数学、概率论与数理统计、线性代数、计量经济学、时间序列分析、回归分析、多元统计分析、非参数统计
+▪ 竞赛奖项 ：全国大学生统计建模大赛 省级（北京市）一等奖 、 Wor ldQuant 量化投资大赛金牌</div>
         </section>
 
         <section>
           <h2>实习经历</h2>
-          <div class="item">
-            <div class="item-head">
-              <h3>德勤管理咨询（上海）有限公司</h3>
-              <div class="date">2026.02–2026.03</div>
-            </div>
-            <div class="role">税务与商务咨询部</div>
-            <ul>
-              <li>参与 OECD 支柱二全球最低税合规项目，服务中粮集团、太平洋保险、中国信达、长城汽车等多家大型企业客户，独立承担实体股权架构分析、基础信息表编制、公司名称翻译及财务数据汇总等数据全流程工作。</li>
-              <li>主导中粮集团 1,258 家实体股权数据清洗，针对公司名称不一致导致 Excel 无法自动匹配的问题，自主开发 Python 模糊匹配程序，实现名称自动比对与分级归类；进一步开发通用型 Excel 标准化工具，并以 Flask 构建 Web 界面开源至 GitHub。</li>
-              <li>负责太平洋保险近 200 家实控企业股权穿透，借助启信宝等平台交叉验证嵌套架构，输出标准化结构信息。</li>
-            </ul>
-          </div>
+          <div class="block">德勤管理咨询（上海）有限公司 | 税务与商务咨询部
+2026.02–2026.03
+▪ 实习概述 ：参与 OECD 支柱二全球最低税合规项目，服务中粮集团、太平洋保险、中国信达、长城汽车等多家大型企业客户，
+独立承担 实体股权架构分析、基础信息表编制、公司名称翻译及财务数据汇总 等数据全流程工作。
+▪ 工具开发 ：主导中粮集团 1,258 家实体的股权数据清洗，针对公司名称不一致导致 Excel 无法自动匹配的问题，自主开发 Python
+模糊匹配程序，基于字符串相似度算法实现名称自动比对与分级归类，生成匹配报告交付团队确认。进一步开发通用型 Excel 标
+准化工具（大小写统一、空格规范化、 CJK 清洗等），均以 Flask 构建 Web 界面并开源至 GitHub 。
+▪ 股权穿透 ：负责太平洋保险近 200 家实控企业股权穿透，借助启信宝等平台交叉验证嵌套架构，输出标准化结构信息。
 
-          <div class="item">
-            <div class="item-head">
-              <h3>交通银行</h3>
-              <div class="date">2025.07–2025.08</div>
-            </div>
-            <div class="role">对公业务部</div>
-            <ul>
-              <li>参与企业授信报告编写与财务尽调，通过企查查等平台采集目标企业工商、股权结构数据。</li>
-              <li>运用 Excel 构建信用评分模型，从偿债能力等多维度量化评估企业信用风险，为信贷审批提供数据支撑。</li>
-              <li>整理汇总外汇业务等 12 类高频业务咨询记录并建立标准化知识体系；参与企业开户流程，熟悉外汇登记、询证函办理等操作。</li>
-            </ul>
-          </div>
+交通银行 | 对公业务部
+2025.07–2025.08
+▪ 授信分析 ：参与企业授信报告编写与财务尽调，通过企查查等平台采集目标企业工商、股权结构数据；运用 Excel 构建信用评分
+模型，从偿债能力（流动比率、速动比率）等多维度量化评估企业信用风险，为信贷审批提供数据支撑。
+▪ 业务管理 ：协助对公业务全流程管理，整理汇总外汇业务等 12 类高频业务咨询记录并建立标准化知识体系； 参与企业开户流
+程 ，协助审核营业执照等资料，熟悉外汇登记、询证函办理等操作。
 
-          <div class="item">
-            <div class="item-head">
-              <h3>中石化石油工程建设有限公司</h3>
-              <div class="date">2024.07–2024.08</div>
-            </div>
-            <div class="role">财务部</div>
-            <ul>
-              <li>运用 Excel 处理多单位跨市场经营数据，横纵向对比分析毛利率变化趋势，为投标策略优化提供数据支撑。</li>
-              <li>协助搭建合同资产质量评价模型与市场质量分析模型，从多个维度识别高风险项目与高风险市场领域，支撑新签合同布局决策。</li>
-            </ul>
-          </div>
+中石化石油工程建设有限公司 | 财务部
+2024.07–2024.08
+▪ 毛利对标 ：运用 Excel 处理多单位跨市场经营数据，横纵向对比分析毛利率变化趋势，为投标策略优化提供数据支撑。
+▪ 风控建模 ：协助搭建两套 财务风控模型 —— ① 合同资产质量评价模型 ：抽取 190 余个项目样本，从结算及时性、超合同额风险
+等维度 构建加权评分体系 ，识别出 35 个高风险项目； ② 市场质量分析模型 ：整合 21 个细分市场、 4,000+ 项目数据，建立横向
+对标与纵向 5 年趋势的 双向评价机制 ，定位高风险市场领域，支撑新签合同布局决策。</div>
         </section>
 
         <section>
           <h2>论文发表</h2>
-          <div class="item">
-            <div class="item-head">
-              <h3>Orion: Spatiotemporal Neural Networks with Self-Validating Directed Graphs for Traffic and Epidemic Forecasting</h3>
-              <div class="date">Under Review</div>
-            </div>
-            <div class="role">第一作者（通讯）｜KDD 2026 Research Track Cycle 2</div>
-          </div>
+          <div class="block">Or ion: Spatiotempor al Neur al Networ ks with Self-Validating Dir ected Gr aphs for Tr affic and Epidemic For ecasting
+第一作者（通讯） KDD 2026 Resear ch Tr ack Cycle 2 (Under review)</div>
         </section>
 
         <section>
           <h2>项目经历</h2>
-          <div class="item">
-            <div class="item-head">
-              <h3>中国国航经营分析与五维竞争力评价</h3>
-              <div class="date">2025.11–2025.12</div>
-            </div>
-            <div class="role">核心成员</div>
-            <ul>
-              <li>复现并优化开源舆情爬虫，使用 Selenium 访问东方财富股吧，结合 CSS 选择器提取帖子标题、浏览量等字段，数据落盘 MongoDB，采集三大航 2.5 万条舆情数据。</li>
-              <li>在舆情维度系统比较 CFSD 金融词典与 FinBERT 两套方案，最终采用 FinBERT 连续得分纳入“财务三维 + 舆情 + ESG”五维竞争力模型。</li>
-            </ul>
-          </div>
+          <div class="block">中国国航经营分析与五维竞争力评价 | 核心成员
+2025.11–2025.12
+▪ 舆情采集 ： 复现并优化开源爬虫 ，使用 Selenium 访问东方财富股吧，结合 CSS 选择器提取帖子标题、浏览量等字段，配合随机
+延时与反检测注入规避反爬；数据落盘 MongoDB ，采集三大航 2.5 万条舆情数据，清洗后输出标准化 CSV 。
+▪ 综合评价与情感分析 ：构建 " 财务三维 + 舆情 +ESG" 五维竞争力模型，其中舆情维度系统对比 两套方案 —— ① CFSD 金融词典统
+计正负词频计算归一化得分； ② FinBERT （ ber t-base-chinese 金融微调）批量推理提取三分类概率计算连续得分，通过 6 组典型
+案例定量论证 FinBERT 在否定句式、反讽等场景下的优越性，最终采用其连续得分纳入评价体系；整体模型采用 Min-Max 标准
+化与多组权重稳健性检验，量化三大航在资源、运营、市场感知等维度的结构性差异。
 
-          <div class="item">
-            <div class="item-head">
-              <h3>WorldQuant 量化投资大赛金牌</h3>
-              <div class="date">2025.08–至今</div>
-            </div>
-            <div class="role">个人项目</div>
-            <ul>
-              <li>开发 10 余个高质量 Alpha 因子，涵盖价量特征、财务指标、另类数据等维度，获得全球前 5% 金牌与 WorldQuant 量化顾问资格。</li>
-              <li>基于 A 股数据搭建单因子检验框架，并构建 XGBoost / LightGBM 集成学习模型实现因子非线性融合。</li>
-            </ul>
-          </div>
+Wor ldQuant 量化投资大赛金牌 | 个人项目
+2025.08– 至今
+▪ Wor ldQuant 量化投资大赛：大赛聚焦 Alpha 因子挖掘与优化。开发 10 余个高质量因子（ Sharpe≥1.25 ，换手率 ≤70% ），涵盖价
+量特征、财务指标、另类数据等维度。通过特征工程优化信号质量，控制交易成本。目前累计得分 19,538 ，全球排名前 5% ，获
+得大赛金牌与 WorldQuant 量化顾问资格。
+▪ 因子验证与多因子模型构建 ：筛选表现优异因子（ Sharpe≥2.0 ）迁移至 A 股市场，使用 Tushare 获取全市场历史数据，搭建标准
+化单因子检验框架（含收益率分析、 IC/IR 计算、分层回测等），验证因子有效性；整合 Sharpe≥1.0 的优质因子，基于 2018 年
+至今 A 股数据，构建 XGBoost/LightGBM 集成学习模型，实现因子非线性融合。
 
-          <div class="item">
-            <div class="item-head">
-              <h3>基于自研多模态 Transformers 和 LLM 的股价预测研究</h3>
-              <div class="date">2024.09–至今</div>
-            </div>
-            <div class="role">个人项目</div>
-            <ul>
-              <li>使用网络爬虫构建新数据集并设计多模态 Transformers 架构，融合预训练 BERT 文本表示与股价技术指标特征。</li>
-              <li>独立完成模型开发，初步实验预测精度显著优于传统模型，当前正进行超参数优化，目标为高水平会议论文。</li>
-            </ul>
-          </div>
+基于自研多模态 Tr ansfor mer s 和 LLM 的股价预测研究 | 个人项目
+2024.09– 至今
+▪ 技术方案 ：使用 网络爬虫构建新数据集 并设计创新多模态 Tr ansfor mer s 架构。融合预训练 BERT 处理新闻文本，采用多头注意
+力机制处理 六大股价技术指标 ；通过优化 Encoder -Decoder 结构增强模型的长期依赖捕捉能力。
+▪ 项目成果 ：独立完成模型开发，初步实验预测精度显著优于传统模型；正进行超参数优化，目标高水平会议论文。</div>
         </section>
 
         <section>
           <h2>技能</h2>
-          <div class="grid-2">
-            <div class="small-card">
-              <h3>编程与数据分析</h3>
-              <p>Python（Pandas / NumPy / PyTorch / Scikit-learn）、R、SQL、C 语言；熟悉时序与图结构数据建模，能独立搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline。</p>
-            </div>
-            <div class="small-card">
-              <h3>工具与平台</h3>
-              <p>LaTeX、SPSS、EViews、MS Office；熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验。</p>
-            </div>
-          </div>
-          <div class="tag-list">
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Selenium</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Time Series</span>
-            <span class="tag">Quant Research</span>
-            <span class="tag">AI Agent</span>
-          </div>
+          <div class="block">▪ 编程与数据分析 ： Python （ Pandas / NumPy / PyTorch / Scikit-learn ）、 R 、 SQL 、 C 语言；熟悉 时序与图结构数据建模 ，能
+独立 搭建 从数据清洗、特征工程到模型调优的端到端 ML Pipeline 。
+▪ 工具与平台 ： LaTeX 、 SPSS 、 EViews ； MS Office （已通过计算机二级考试）；能熟练使用 Claude Code 、 GitHub Copilot 等 AI
+辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验，显著
+提升数据处理与代码开发效率。
+▪ 语言技能 ：雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得 “ 良好 ” 成绩。</div>
         </section>
-
-        <section>
-          <h2>语言能力</h2>
-          <ul>
-            <li>雅思 6.5 分</li>
-            <li>大学英语六级 513 分</li>
-            <li>国际人才英语考试（中级）“良好”</li>
-          </ul>
-        </section>
-      </div>
-
-      <footer>
-        该页面根据《李时光简历投递版本.pdf》整理生成，当前为本地检查版本。
-      </footer>
+      </main>
+      <footer>本页根据用户提供的简历原文内容整理展示。</footer>
     </div>
   </div>
 </body>
