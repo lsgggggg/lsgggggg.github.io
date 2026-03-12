@@ -7,96 +7,236 @@
   <meta name="description" content="李时光个人主页" />
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --text: #111827;
-      --muted: #6b7280;
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --panel-soft: #f8fbff;
+      --border: #e5ebf3;
+      --text: #172033;
+      --muted: #5f6f86;
       --title: #0f172a;
       --accent: #2563eb;
-      --max: 980px;
+      --accent-soft: #eaf2ff;
+      --shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+      --max: 1080px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 28%),
+        linear-gradient(180deg, #f7f9fd 0%, #f2f5fa 100%);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.8;
+      line-height: 1.85;
     }
     .wrap {
       width: min(var(--max), calc(100% - 28px));
       margin: 28px auto 48px;
     }
-    .page {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(243,246,251,0.82);
+      border: 1px solid rgba(229,235,243,0.85);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
     }
-    header {
-      padding: 30px 32px 20px;
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 18px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-weight: 700;
+      color: var(--title);
+      letter-spacing: .2px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav a { text-decoration: none; color: inherit; }
+    .page {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    header.hero {
+      padding: 40px 40px 28px;
+      background: linear-gradient(180deg, #fbfdff 0%, #f7faff 100%);
       border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid #d8e6ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
     h1 {
       margin: 0 0 10px;
-      font-size: 34px;
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1.1;
       color: var(--title);
+      letter-spacing: -.8px;
     }
-    .meta {
+    .subtitle {
+      margin: 0;
       color: var(--muted);
+      font-size: 16px;
+      max-width: 760px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .meta-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+    .meta-card .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .meta-card .value {
       font-size: 14px;
-      white-space: pre-wrap;
+      color: var(--title);
+      word-break: break-word;
     }
     main {
-      padding: 8px 32px 32px;
+      padding: 26px;
+      display: grid;
+      gap: 18px;
     }
-    section {
-      padding-top: 22px;
+    section.card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 24px 22px;
     }
-    h2 {
-      margin: 0 0 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-      font-size: 22px;
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 16px;
       color: var(--title);
+      font-size: 22px;
+    }
+    .section-title::before {
+      content: "";
+      width: 6px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #2563eb, #60a5fa);
+      flex: 0 0 auto;
     }
     .block {
       white-space: pre-wrap;
       font-size: 15px;
+      color: var(--text);
+    }
+    .block + .block {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+    }
+    .highlight {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
     }
     footer {
       border-top: 1px solid var(--border);
-      padding: 18px 32px 24px;
-      font-size: 13px;
+      padding: 18px 26px 24px;
       color: var(--muted);
+      font-size: 13px;
+      background: #fcfdff;
     }
-    @media (max-width: 768px) {
-      header, main, footer { padding-left: 18px; padding-right: 18px; }
-      h1 { font-size: 28px; }
+    @media (max-width: 860px) {
+      .meta-grid { grid-template-columns: 1fr; }
+      header.hero { padding: 28px 20px 22px; }
+      main { padding: 16px; }
+      section.card { padding: 18px; }
+      footer { padding: 16px 18px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">李时光 · Personal Website</div>
+        <div class="nav">
+          <a href="#education">教育背景</a>
+          <a href="#internship">实习经历</a>
+          <a href="#paper">论文发表</a>
+          <a href="#projects">项目经历</a>
+          <a href="#skills">技能</a>
+        </div>
+      </div>
+    </div>
+
     <div class="page">
-      <header>
+      <header class="hero">
+        <div class="eyebrow">Resume-based Personal Homepage</div>
         <h1>李时光</h1>
-        <div class="meta">电话： 15311168073 | 邮箱： lishiguang8073@gmail.com | 户口所在地：北京市朝阳区</div>
+        <p class="subtitle">北京工商大学经济统计学本科生（2027 届）｜深度学习、AI、数据挖掘、量化研究、时空预测、多模态建模</p>
+        <div class="meta-grid">
+          <div class="meta-card">
+            <div class="label">电话</div>
+            <div class="value">15311168073</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">邮箱</div>
+            <div class="value">lishiguang8073@gmail.com</div>
+          </div>
+          <div class="meta-card">
+            <div class="label">户口所在地</div>
+            <div class="value">北京市朝阳区</div>
+          </div>
+        </div>
       </header>
+
       <main>
-        <section>
-          <h2>教育背景</h2>
-          <div class="block">北京工商大学 | 经济统计学 | 学士 | 2027 届
+        <section class="card" id="education">
+          <h2 class="section-title">教育背景</h2>
+          <div class="highlight">
+            <div class="block">北京工商大学 | 经济统计学 | 学士 | 2027 届
 2023.09–2027.06
 ▪ GPA ： 4.01 /5.00
 ▪ 专业课程 ：高等数学、概率论与数理统计、线性代数、计量经济学、时间序列分析、回归分析、多元统计分析、非参数统计
 ▪ 竞赛奖项 ：全国大学生统计建模大赛 省级（北京市）一等奖 、 Wor ldQuant 量化投资大赛金牌</div>
+          </div>
         </section>
 
-        <section>
-          <h2>实习经历</h2>
+        <section class="card" id="internship">
+          <h2 class="section-title">实习经历</h2>
           <div class="block">德勤管理咨询（上海）有限公司 | 税务与商务咨询部
 2026.02–2026.03
 ▪ 实习概述 ：参与 OECD 支柱二全球最低税合规项目，服务中粮集团、太平洋保险、中国信达、长城汽车等多家大型企业客户，
@@ -104,16 +244,16 @@
 ▪ 工具开发 ：主导中粮集团 1,258 家实体的股权数据清洗，针对公司名称不一致导致 Excel 无法自动匹配的问题，自主开发 Python
 模糊匹配程序，基于字符串相似度算法实现名称自动比对与分级归类，生成匹配报告交付团队确认。进一步开发通用型 Excel 标
 准化工具（大小写统一、空格规范化、 CJK 清洗等），均以 Flask 构建 Web 界面并开源至 GitHub 。
-▪ 股权穿透 ：负责太平洋保险近 200 家实控企业股权穿透，借助启信宝等平台交叉验证嵌套架构，输出标准化结构信息。
+▪ 股权穿透 ：负责太平洋保险近 200 家实控企业股权穿透，借助启信宝等平台交叉验证嵌套架构，输出标准化结构信息。</div>
 
-交通银行 | 对公业务部
+          <div class="block">交通银行 | 对公业务部
 2025.07–2025.08
 ▪ 授信分析 ：参与企业授信报告编写与财务尽调，通过企查查等平台采集目标企业工商、股权结构数据；运用 Excel 构建信用评分
 模型，从偿债能力（流动比率、速动比率）等多维度量化评估企业信用风险，为信贷审批提供数据支撑。
 ▪ 业务管理 ：协助对公业务全流程管理，整理汇总外汇业务等 12 类高频业务咨询记录并建立标准化知识体系； 参与企业开户流
-程 ，协助审核营业执照等资料，熟悉外汇登记、询证函办理等操作。
+程 ，协助审核营业执照等资料，熟悉外汇登记、询证函办理等操作。</div>
 
-中石化石油工程建设有限公司 | 财务部
+          <div class="block">中石化石油工程建设有限公司 | 财务部
 2024.07–2024.08
 ▪ 毛利对标 ：运用 Excel 处理多单位跨市场经营数据，横纵向对比分析毛利率变化趋势，为投标策略优化提供数据支撑。
 ▪ 风控建模 ：协助搭建两套 财务风控模型 —— ① 合同资产质量评价模型 ：抽取 190 余个项目样本，从结算及时性、超合同额风险
@@ -121,14 +261,16 @@
 对标与纵向 5 年趋势的 双向评价机制 ，定位高风险市场领域，支撑新签合同布局决策。</div>
         </section>
 
-        <section>
-          <h2>论文发表</h2>
-          <div class="block">Or ion: Spatiotempor al Neur al Networ ks with Self-Validating Dir ected Gr aphs for Tr affic and Epidemic For ecasting
+        <section class="card" id="paper">
+          <h2 class="section-title">论文发表</h2>
+          <div class="highlight">
+            <div class="block">Or ion: Spatiotempor al Neur al Networ ks with Self-Validating Dir ected Gr aphs for Tr affic and Epidemic For ecasting
 第一作者（通讯） KDD 2026 Resear ch Tr ack Cycle 2 (Under review)</div>
+          </div>
         </section>
 
-        <section>
-          <h2>项目经历</h2>
+        <section class="card" id="projects">
+          <h2 class="section-title">项目经历</h2>
           <div class="block">中国国航经营分析与五维竞争力评价 | 核心成员
 2025.11–2025.12
 ▪ 舆情采集 ： 复现并优化开源爬虫 ，使用 Selenium 访问东方财富股吧，结合 CSS 选择器提取帖子标题、浏览量等字段，配合随机
@@ -136,26 +278,26 @@
 ▪ 综合评价与情感分析 ：构建 " 财务三维 + 舆情 +ESG" 五维竞争力模型，其中舆情维度系统对比 两套方案 —— ① CFSD 金融词典统
 计正负词频计算归一化得分； ② FinBERT （ ber t-base-chinese 金融微调）批量推理提取三分类概率计算连续得分，通过 6 组典型
 案例定量论证 FinBERT 在否定句式、反讽等场景下的优越性，最终采用其连续得分纳入评价体系；整体模型采用 Min-Max 标准
-化与多组权重稳健性检验，量化三大航在资源、运营、市场感知等维度的结构性差异。
+化与多组权重稳健性检验，量化三大航在资源、运营、市场感知等维度的结构性差异。</div>
 
-Wor ldQuant 量化投资大赛金牌 | 个人项目
+          <div class="block">Wor ldQuant 量化投资大赛金牌 | 个人项目
 2025.08– 至今
 ▪ Wor ldQuant 量化投资大赛：大赛聚焦 Alpha 因子挖掘与优化。开发 10 余个高质量因子（ Sharpe≥1.25 ，换手率 ≤70% ），涵盖价
 量特征、财务指标、另类数据等维度。通过特征工程优化信号质量，控制交易成本。目前累计得分 19,538 ，全球排名前 5% ，获
 得大赛金牌与 WorldQuant 量化顾问资格。
 ▪ 因子验证与多因子模型构建 ：筛选表现优异因子（ Sharpe≥2.0 ）迁移至 A 股市场，使用 Tushare 获取全市场历史数据，搭建标准
 化单因子检验框架（含收益率分析、 IC/IR 计算、分层回测等），验证因子有效性；整合 Sharpe≥1.0 的优质因子，基于 2018 年
-至今 A 股数据，构建 XGBoost/LightGBM 集成学习模型，实现因子非线性融合。
+至今 A 股数据，构建 XGBoost/LightGBM 集成学习模型，实现因子非线性融合。</div>
 
-基于自研多模态 Tr ansfor mer s 和 LLM 的股价预测研究 | 个人项目
+          <div class="block">基于自研多模态 Tr ansfor mer s 和 LLM 的股价预测研究 | 个人项目
 2024.09– 至今
 ▪ 技术方案 ：使用 网络爬虫构建新数据集 并设计创新多模态 Tr ansfor mer s 架构。融合预训练 BERT 处理新闻文本，采用多头注意
 力机制处理 六大股价技术指标 ；通过优化 Encoder -Decoder 结构增强模型的长期依赖捕捉能力。
 ▪ 项目成果 ：独立完成模型开发，初步实验预测精度显著优于传统模型；正进行超参数优化，目标高水平会议论文。</div>
         </section>
 
-        <section>
-          <h2>技能</h2>
+        <section class="card" id="skills">
+          <h2 class="section-title">技能</h2>
           <div class="block">▪ 编程与数据分析 ： Python （ Pandas / NumPy / PyTorch / Scikit-learn ）、 R 、 SQL 、 C 语言；熟悉 时序与图结构数据建模 ，能
 独立 搭建 从数据清洗、特征工程到模型调优的端到端 ML Pipeline 。
 ▪ 工具与平台 ： LaTeX 、 SPSS 、 EViews ； MS Office （已通过计算机二级考试）；能熟练使用 Claude Code 、 GitHub Copilot 等 AI
@@ -164,6 +306,7 @@ Wor ldQuant 量化投资大赛金牌 | 个人项目
 ▪ 语言技能 ：雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得 “ 良好 ” 成绩。</div>
         </section>
       </main>
+
       <footer>本页根据用户提供的简历原文内容整理展示。</footer>
     </div>
   </div>
