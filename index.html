@@ -78,6 +78,12 @@
       background: linear-gradient(180deg, #fbfdff 0%, #f7faff 100%);
       border-bottom: 1px solid var(--border);
     }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 260px;
+      gap: 28px;
+      align-items: center;
+    }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -103,6 +109,21 @@
       color: var(--muted);
       font-size: 16px;
       max-width: 760px;
+    }
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-photo img {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+      background: #fff;
     }
     .meta-grid {
       display: grid;
@@ -173,17 +194,20 @@
     }
     footer {
       border-top: 1px solid var(--border);
-      padding: 18px 26px 24px;
+      padding: 16px 26px 20px;
       color: var(--muted);
       font-size: 13px;
       background: #fcfdff;
+      text-align: center;
     }
     @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo { justify-content: flex-start; }
       .meta-grid { grid-template-columns: 1fr; }
       header.hero { padding: 28px 20px 22px; }
       main { padding: 16px; }
       section.card { padding: 18px; }
-      footer { padding: 16px 18px 20px; }
+      footer { padding: 14px 18px 18px; }
     }
   </style>
 </head>
@@ -204,21 +228,28 @@
 
     <div class="page">
       <header class="hero">
-        <div class="eyebrow">Resume-based Personal Homepage</div>
-        <h1>李时光</h1>
-        <p class="subtitle">北京工商大学经济统计学本科生（2027 届）｜深度学习、AI、数据挖掘、量化研究、时空预测、多模态建模</p>
-        <div class="meta-grid">
-          <div class="meta-card">
-            <div class="label">电话</div>
-            <div class="value">15311168073</div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Shiguang Li</div>
+            <h1>李时光</h1>
+            <p class="subtitle">北京工商大学经济统计学本科生（2027 届）｜深度学习、AI、数据挖掘、量化研究、时空预测、多模态建模</p>
+            <div class="meta-grid">
+              <div class="meta-card">
+                <div class="label">电话</div>
+                <div class="value">15311168073</div>
+              </div>
+              <div class="meta-card">
+                <div class="label">邮箱</div>
+                <div class="value">lishiguang8073@gmail.com</div>
+              </div>
+              <div class="meta-card">
+                <div class="label">户口所在地</div>
+                <div class="value">北京市朝阳区</div>
+              </div>
+            </div>
           </div>
-          <div class="meta-card">
-            <div class="label">邮箱</div>
-            <div class="value">lishiguang8073@gmail.com</div>
-          </div>
-          <div class="meta-card">
-            <div class="label">户口所在地</div>
-            <div class="value">北京市朝阳区</div>
+          <div class="hero-photo">
+            <img src="profile.jpg" alt="李时光" />
           </div>
         </div>
       </header>
@@ -307,7 +338,7 @@
         </section>
       </main>
 
-      <footer>本页根据用户提供的简历原文内容整理展示。</footer>
+      <footer>© 李时光</footer>
     </div>
   </div>
 </body>
