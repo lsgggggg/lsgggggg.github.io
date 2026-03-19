@@ -472,41 +472,46 @@
         }
 
         /* ===== Skills Section ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-card {
+        .skills-container {
             background: var(--card-bg);
             border-radius: var(--radius);
-            padding: 1.3rem;
             border: 1px solid var(--border);
-            transition: var(--transition);
+            overflow: hidden;
         }
 
-        .skill-card:hover {
-            box-shadow: var(--shadow);
-            border-color: transparent;
+        .skills-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
-        .skill-card h3 {
-            font-size: 0.9rem;
+        .skills-row + .skills-row {
+            border-top: 1px solid var(--border);
+        }
+
+        .skill-cell {
+            padding: 1.4rem 1.6rem;
+        }
+
+        .skill-cell + .skill-cell {
+            border-left: 1px solid var(--border);
+        }
+
+        .skill-cell h3 {
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .skill-card h3 i {
+        .skill-cell h3 i {
             color: var(--accent);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
-        .skill-card p {
+        .skill-cell p {
             font-size: 0.87rem;
             color: var(--text-secondary);
             line-height: 1.7;
@@ -516,7 +521,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.35rem;
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
         }
 
         .skill-tag {
@@ -528,12 +533,31 @@
             font-weight: 500;
         }
 
-        /* ===== Interests ===== */
+        /* ===== Interests (full-width bottom row) ===== */
+        .interests-cell {
+            border-top: 1px solid var(--border);
+            padding: 1.4rem 1.6rem;
+        }
+
+        .interests-cell h3 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .interests-cell h3 i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
         .interests-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            gap: 0.45rem;
         }
 
         .interest-item {
@@ -541,8 +565,8 @@
             align-items: center;
             gap: 0.3rem;
             font-size: 0.82rem;
-            padding: 0.3rem 0.7rem;
-            background: var(--card-bg);
+            padding: 0.3rem 0.75rem;
+            background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 20px;
             color: var(--text-secondary);
@@ -624,8 +648,13 @@
                 display: none;
             }
 
-            .skills-grid {
+            .skills-row {
                 grid-template-columns: 1fr;
+            }
+
+            .skill-cell + .skill-cell {
+                border-left: none;
+                border-top: 1px solid var(--border);
             }
 
             .navbar-inner {
@@ -1141,51 +1170,57 @@
             <h2 data-zh="技能 / 兴趣" data-en="Skills & Interests">技能 / 兴趣</h2>
         </div>
 
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fas fa-language"></i> <span data-zh="语言技能" data-en="Language Skills">语言技能</span></h3>
-                <p data-zh="雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩" data-en="IELTS 6.5, CET-6: 513, ETIC (Intermediate) with &quot;Good&quot; rating">雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩</p>
-            </div>
-
-            <div class="skill-card">
-                <h3><i class="fas fa-laptop-code"></i> <span data-zh="编程与数据分析" data-en="Programming & Data Analysis">编程与数据分析</span></h3>
-                <div data-lang="zh">
-                    <p>Python（Pandas / NumPy / PyTorch / Scikit-learn）、R、SQL、C语言；熟悉时序与图结构数据建模，能独立搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline。</p>
+        <div class="skills-container">
+            <!-- Row 1: Language + Programming -->
+            <div class="skills-row">
+                <div class="skill-cell">
+                    <h3><i class="fas fa-language"></i> <span data-zh="语言技能" data-en="Language Skills">语言技能</span></h3>
+                    <p data-zh="雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩" data-en="IELTS 6.5, CET-6: 513, ETIC (Intermediate) with &quot;Good&quot; rating">雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩</p>
                 </div>
-                <div data-lang="en" style="display:none;">
-                    <p>Python (Pandas / NumPy / PyTorch / Scikit-learn), R, SQL, C; proficient in time-series and graph-structured data modeling; capable of independently building end-to-end ML Pipelines from data cleansing and feature engineering to model optimization.</p>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">R</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <h3><i class="fas fa-wrench"></i> <span data-zh="工具与平台" data-en="Tools & Platforms">工具与平台</span></h3>
-                <div data-lang="zh">
-                    <p>LaTeX、SPSS、EViews；MS Office（已通过计算机二级考试）；能熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验，显著提升数据处理与代码开发效率。</p>
-                </div>
-                <div data-lang="en" style="display:none;">
-                    <p>LaTeX, SPSS, EViews; MS Office (passed Computer Proficiency Level 2 Exam); proficient with AI-assisted development tools including Claude Code and GitHub Copilot; skilled in Prompt Engineering and AI Agent workflows; experienced in deploying open-source Agents such as OpenClaw and developing Skills, significantly enhancing data processing and coding efficiency.</p>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">LaTeX</span>
-                    <span class="skill-tag">SPSS</span>
-                    <span class="skill-tag">EViews</span>
-                    <span class="skill-tag">MS Office</span>
-                    <span class="skill-tag">Claude Code</span>
-                    <span class="skill-tag">GitHub Copilot</span>
+                <div class="skill-cell">
+                    <h3><i class="fas fa-laptop-code"></i> <span data-zh="编程与数据分析" data-en="Programming & Data Analysis">编程与数据分析</span></h3>
+                    <div data-lang="zh">
+                        <p>Python（Pandas / NumPy / PyTorch / Scikit-learn）、R、SQL、C语言；熟悉时序与图结构数据建模，能独立搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline。</p>
+                    </div>
+                    <div data-lang="en" style="display:none;">
+                        <p>Python (Pandas / NumPy / PyTorch / Scikit-learn), R, SQL, C; proficient in time-series and graph-structured data modeling; capable of independently building end-to-end ML Pipelines from data cleansing and feature engineering to model optimization.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
                 </div>
             </div>
-
-            <div class="skill-card">
+            <!-- Row 2: Tools -->
+            <div class="skills-row">
+                <div class="skill-cell" style="grid-column: 1 / -1;">
+                    <h3><i class="fas fa-wrench"></i> <span data-zh="工具与平台" data-en="Tools & Platforms">工具与平台</span></h3>
+                    <div data-lang="zh">
+                        <p>LaTeX、SPSS、EViews；MS Office（已通过计算机二级考试）；能熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验，显著提升数据处理与代码开发效率。</p>
+                    </div>
+                    <div data-lang="en" style="display:none;">
+                        <p>LaTeX, SPSS, EViews; MS Office (passed Computer Proficiency Level 2 Exam); proficient with AI-assisted development tools including Claude Code and GitHub Copilot; skilled in Prompt Engineering and AI Agent workflows; experienced in deploying open-source Agents such as OpenClaw and developing Skills, significantly enhancing data processing and coding efficiency.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">SPSS</span>
+                        <span class="skill-tag">EViews</span>
+                        <span class="skill-tag">MS Office</span>
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">AI Agent</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 3: Interests -->
+            <div class="interests-cell">
                 <h3><i class="fas fa-heart"></i> <span data-zh="兴趣爱好" data-en="Interests & Hobbies">兴趣爱好</span></h3>
                 <div class="interests-row">
                     <span class="interest-item" data-zh="🎵 葫芦丝（10 级）" data-en="🎵 Hulusi (Grade 10)">🎵 葫芦丝（10 级）</span>
