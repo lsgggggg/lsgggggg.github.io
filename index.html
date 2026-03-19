@@ -973,11 +973,13 @@
                     <p><strong>舆情采集：</strong>复现并优化开源爬虫 EastMoney_Crawler，使用 Selenium 模拟浏览器访问东方财富股吧，结合 CSS 选择器提取帖子标题、浏览量、发帖时间等字段，配合随机延时与 stealth.js 反检测注入规避反爬；数据落盘 MongoDB，共采集国航、东航、南航三家公司 2.5 万条全年舆情数据，清洗后输出标准化 CSV</p>
                     <p><strong>情感分析：</strong>构建两套评分方案并系统对比——①CFSD 金融词典在 Excel 中通过 LEN/SUBSTITUTE 统计正负词频计算归一化得分；②FinBERT（bert-base-chinese 金融微调）使用 T4 GPU 批量推理提取三分类概率计算连续得分。通过 6 组典型案例定量论证 FinBERT 在否定句式、反讽及隐含情感场景下的优越性（如"恐慌时反着来"词典误判 25 分、FinBERT 正确识别 58.64 分），最终采用 FinBERT 得分纳入评价体系。</p>
                     <p><strong>综合评价：</strong>参与构建"财务三维+舆情+ESG"五维竞争力模型，采用 Min-Max 标准化与多组权重稳健性检验，量化三大航在资源、运营、适配、市场感知及可持续发展维度的结构性差异。</p>
+                    <p><a href="air-china-analysis.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> 查看完整论文 (PDF)</a></p>
                 </div>
                 <div data-lang="en" style="display:none;">
                     <p><strong>Sentiment Data Collection:</strong> Reproduced and optimized the open-source crawler EastMoney_Crawler; used Selenium to simulate browser access to EastMoney stock forums, extracting fields such as post titles, view counts, and posting times via CSS selectors; combined random delays and stealth.js anti-detection injection to bypass crawlers; stored data in MongoDB, collecting 25,000 full-year sentiment records across Air China, China Eastern, and China Southern; outputted standardized CSV after cleansing.</p>
                     <p><strong>Sentiment Analysis:</strong> Built and systematically compared two scoring schemes: ①CFSD Financial Dictionary using LEN/SUBSTITUTE in Excel to calculate normalized positive/negative word frequency scores; ②FinBERT (bert-base-chinese financial fine-tune) using T4 GPU batch inference to extract three-class probabilities and compute continuous scores. Quantitatively demonstrated FinBERT's superiority across 6 typical cases involving negation, sarcasm, and implicit sentiment (e.g., "panic, buy the opposite" misclassified by dictionary at 25 pts, correctly identified by FinBERT at 58.64 pts); ultimately adopted FinBERT scores in the evaluation framework.</p>
                     <p><strong>Comprehensive Evaluation:</strong> Participated in building the "Financial 3D + Sentiment + ESG" five-dimensional competitiveness model; applied Min-Max normalization and multi-weight robustness testing to quantify structural differences among the three major airlines across dimensions of resources, operations, adaptability, market perception, and sustainable development.</p>
+                    <p><a href="air-china-analysis.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> View Full Paper (PDF)</a></p>
                 </div>
             </div>
         </div>
@@ -1042,10 +1044,12 @@
                 <div data-lang="zh">
                     <p><strong>技术创新：</strong>提出面向交通流量预测的深度学习模型，设计基于 KNN 的动态图注意力网络与多头自注意力融合模块，构建三周期输入及权重约束机制捕捉多尺度时空依赖；该工作为后续 KDD 2026 投稿论文 Orion 框架奠定了基础。 <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
                     <p><strong>实验验证：</strong>带领团队处理 PeMS 等 5 个大规模交通数据集（1000+ 监测点、10 万+ 时间步），预测 MAE 较基线降低 15–30%，长期预测误差增长率降低 50%；斩获北京市省级一等奖。</p>
+                    <p><a href="statistical-modeling.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> 查看参赛论文 (PDF)</a></p>
                 </div>
                 <div data-lang="en" style="display:none;">
                     <p><strong>Technical Innovation:</strong> Proposed a deep learning model for traffic flow prediction; designed a KNN-based dynamic graph attention network fused with multi-head self-attention module; constructed a three-period input and weight constraint mechanism to capture multi-scale spatiotemporal dependencies; this work laid the foundation for the subsequently submitted KDD 2026 paper Orion framework. <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
                     <p><strong>Experimental Validation:</strong> Led the team in processing 5 large-scale traffic datasets from PeMS and others (1,000+ monitoring points, 100,000+ time steps); prediction MAE reduced by 15–30% compared to baselines, long-term prediction error growth rate reduced by 50%; won Beijing provincial-level First Prize.</p>
+                    <p><a href="statistical-modeling.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> View Competition Paper (PDF)</a></p>
                 </div>
             </div>
         </div>
