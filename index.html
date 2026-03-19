@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary: #1a1a2e;
-            --accent: #2d5a8e;
-            --accent-light: #3a7bd5;
-            --accent-bg: #f0f5ff;
-            --text: #2c2c2c;
-            --text-secondary: #5a5a6e;
-            --text-light: #8a8a9a;
-            --bg: #fafbfe;
-            --card-bg: #ffffff;
-            --border: #e8ecf4;
-            --shadow: 0 2px 16px rgba(0,0,0,0.06);
-            --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+            --primary: #141413;
+            --accent: #c96442;
+            --accent-light: #d97757;
+            --accent-bg: #f5ebe4;
+            --text: #30302e;
+            --text-secondary: #5c5c58;
+            --text-light: #8a8a82;
+            --bg: #f0efe6;
+            --card-bg: #faf9f4;
+            --border: rgba(194, 192, 182, 0.4);
+            --shadow: 0 2px 16px rgba(20,20,19,0.05);
+            --shadow-hover: 0 8px 32px rgba(20,20,19,0.08);
             --radius: 12px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -53,7 +53,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.85);
+            background: rgba(240,239,230,0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -131,7 +131,7 @@
         /* ===== Hero Section ===== */
         .hero {
             padding: 120px 2rem 60px;
-            background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0f5ff 100%);
+            background: linear-gradient(135deg, #e8e6dc 0%, #ece9e0 50%, #f0efe6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -143,7 +143,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(45,90,142,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(201,100,66,0.05) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -151,27 +151,65 @@
             max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            align-items: center;
-            gap: 3.5rem;
+            align-items: flex-start;
+            gap: 3rem;
         }
 
-        .hero-photo {
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             flex-shrink: 0;
+            gap: 1.2rem;
+            min-width: 220px;
         }
 
         .hero-photo img {
-            width: 180px;
-            height: 180px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 8px 32px rgba(45,90,142,0.15);
+            border: 4px solid rgba(255,255,255,0.8);
+            box-shadow: 0 8px 32px rgba(20,20,19,0.1);
             transition: var(--transition);
         }
 
         .hero-photo img:hover {
             transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(45,90,142,0.2);
+            box-shadow: 0 12px 40px rgba(20,20,19,0.14);
+        }
+
+        .contact-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 16px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
         }
 
         .hero-info h1 {
@@ -194,40 +232,8 @@
             font-size: 0.92rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-width: 600px;
+            max-width: 650px;
             margin-bottom: 1.2rem;
-        }
-
-        .contact-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .contact-item i {
-            color: var(--accent);
-            width: 16px;
-            text-align: center;
-        }
-
-        .contact-item a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-light);
-            text-decoration: underline;
         }
 
         /* ===== Main Content ===== */
@@ -378,12 +384,12 @@
         }
 
         .edu-badge.gpa {
-            background: #ecfdf5;
-            color: #065f46;
+            background: #f5ebe4;
+            color: #9a4a2a;
         }
 
         .edu-badge.award {
-            background: #fef9c3;
+            background: #fef3c7;
             color: #854d0e;
         }
 
@@ -397,7 +403,7 @@
         .course-tag {
             font-size: 0.78rem;
             padding: 0.2rem 0.55rem;
-            background: #f1f5f9;
+            background: #e8e6dc;
             border-radius: 5px;
             color: var(--text-secondary);
         }
@@ -409,8 +415,8 @@
 
         /* ===== Publication Card ===== */
         .pub-card {
-            background: linear-gradient(135deg, #fafbff 0%, #f0f4ff 100%);
-            border: 1px solid #d4dff7;
+            background: linear-gradient(135deg, #faf9f4 0%, #f5ebe4 100%);
+            border: 1px solid rgba(194,192,182,0.5);
             position: relative;
             overflow: hidden;
         }
@@ -422,7 +428,7 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, var(--accent), var(--accent-light));
+            background: linear-gradient(180deg, #c96442, #d97757);
             border-radius: 4px 0 0 4px;
         }
 
@@ -451,18 +457,18 @@
         }
 
         .pub-badge.author {
-            background: #dbeafe;
-            color: #1e40af;
+            background: #f5ebe4;
+            color: #9a4a2a;
         }
 
         .pub-badge.venue {
-            background: #fce7f3;
-            color: #9d174d;
+            background: #fef3c7;
+            color: #92400e;
         }
 
         .pub-badge.status {
-            background: #fef3c7;
-            color: #92400e;
+            background: #e8e6dc;
+            color: #5c5c58;
         }
 
         /* ===== Skills Section ===== */
@@ -589,16 +595,21 @@
         @media (max-width: 768px) {
             .hero-inner {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
                 gap: 1.5rem;
             }
 
-            .hero-info .bio {
-                max-width: 100%;
+            .hero-left {
+                align-items: center;
             }
 
-            .contact-row {
-                justify-content: center;
+            .contact-col {
+                align-items: center;
+            }
+
+            .hero-info .bio {
+                max-width: 100%;
             }
 
             .hero-info h1 {
@@ -659,7 +670,7 @@
 
         /* ===== Highlight text ===== */
         .highlight {
-            background: linear-gradient(120deg, rgba(45,90,142,0.1) 0%, rgba(58,123,213,0.1) 100%);
+            background: linear-gradient(120deg, rgba(201,100,66,0.1) 0%, rgba(217,119,87,0.1) 100%);
             padding: 0.05em 0.25em;
             border-radius: 3px;
         }
@@ -689,16 +700,11 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-inner">
-        <div class="hero-photo">
-            <img src="photo.jpg" alt="李时光 | Li Shiguang">
-        </div>
-        <div class="hero-info">
-            <h1 id="heroName">李时光</h1>
-            <div class="subtitle" id="heroSubtitle">经济统计学 · 北京工商大学</div>
-            <p class="bio" id="heroBio">
-                我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。
-            </p>
-            <div class="contact-row">
+        <div class="hero-left">
+            <div class="hero-photo">
+                <img src="photo.jpg" alt="李时光 | Li Shiguang">
+            </div>
+            <div class="contact-col">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i> 15311168073
                 </div>
@@ -715,6 +721,13 @@
                     <a href="https://github.com/lsgggggg" target="_blank">github.com/lsgggggg</a>
                 </div>
             </div>
+        </div>
+        <div class="hero-info">
+            <h1 id="heroName">李时光</h1>
+            <div class="subtitle" id="heroSubtitle">经济统计学 · 北京工商大学</div>
+            <p class="bio" id="heroBio">
+                我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。
+            </p>
         </div>
     </div>
 </section>
