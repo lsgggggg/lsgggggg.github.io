@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李时光 | Li Shiguang – Personal Homepage</title>
+    <meta name="description" content="Li Shiguang's personal homepage. Economics & Statistics undergraduate at BTBU, first-author KDD 2026 paper, WorldQuant Gold Medalist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #2d5a8e;
+            --accent-light: #3a7bd5;
+            --accent-bg: #f0f5ff;
+            --text: #2c2c2c;
+            --text-secondary: #5a5a6e;
+            --text-light: #8a8a9a;
+            --bg: #fafbfe;
+            --card-bg: #ffffff;
+            --border: #e8ecf4;
+            --shadow: 0 2px 16px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+            --radius: 12px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            transition: var(--transition);
+        }
+
+        .navbar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.9rem;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: inherit;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .lang-btn:hover:not(.active) {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 120px 2rem 60px;
+            background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0f5ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(45,90,142,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3.5rem;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 8px 32px rgba(45,90,142,0.15);
+            transition: var(--transition);
+        }
+
+        .hero-photo img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(45,90,142,0.2);
+        }
+
+        .hero-info h1 {
+            font-family: 'Source Serif 4', 'Noto Serif SC', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-info .subtitle {
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-info .bio {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 16px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        /* ===== Main Content ===== */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-header i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-bg);
+            border-radius: 10px;
+        }
+
+        .section-header h2 {
+            font-family: 'Source Serif 4', 'Noto Serif SC', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+        }
+
+        /* ===== Cards ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow);
+            border-color: transparent;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.6rem;
+            gap: 1rem;
+        }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: #f8f9fa;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .card-title a:hover {
+            color: var(--accent);
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .card-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+            white-space: nowrap;
+            background: var(--accent-bg);
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .card-body {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .card-body p {
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ===== Education specific ===== */
+        .edu-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.6rem;
+        }
+
+        .edu-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .edu-badge.gpa {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        .edu-badge.award {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .courses-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .course-tag {
+            font-size: 0.78rem;
+            padding: 0.2rem 0.55rem;
+            background: #f1f5f9;
+            border-radius: 5px;
+            color: var(--text-secondary);
+        }
+
+        .course-score {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ===== Publication Card ===== */
+        .pub-card {
+            background: linear-gradient(135deg, #fafbff 0%, #f0f4ff 100%);
+            border: 1px solid #d4dff7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--accent-light));
+            border-radius: 4px 0 0 4px;
+        }
+
+        .pub-title {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 0.8rem;
+            align-items: center;
+        }
+
+        .pub-badge {
+            font-size: 0.78rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .pub-badge.author {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .pub-badge.venue {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .pub-badge.status {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* ===== Skills Section ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 1.3rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            box-shadow: var(--shadow);
+            border-color: transparent;
+        }
+
+        .skill-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card h3 i {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .skill-card p {
+            font-size: 0.87rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.55rem;
+            background: var(--accent-bg);
+            color: var(--accent);
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        /* ===== Interests ===== */
+        .interests-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .interest-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.7rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .interest-item:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        .footer p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== GitHub link button ===== */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .github-link:hover {
+            background: var(--accent-bg);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .hero-info .bio {
+                max-width: 100%;
+            }
+
+            .contact-row {
+                justify-content: center;
+            }
+
+            .hero-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .card-header {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar-inner {
+                height: 56px;
+            }
+        }
+
+        /* ===== Scroll animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Print styles ===== */
+        @media print {
+            .navbar, .lang-toggle, .footer { display: none; }
+            .hero { padding-top: 20px; }
+            .card { break-inside: avoid; }
+        }
+
+        /* ===== Hamburger menu ===== */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* ===== Highlight text ===== */
+        .highlight {
+            background: linear-gradient(120deg, rgba(45,90,142,0.1) 0%, rgba(58,123,213,0.1) 100%);
+            padding: 0.05em 0.25em;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <div class="nav-brand" id="navBrand">李时光</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#education" data-zh="教育背景" data-en="Education">教育背景</a></li>
+            <li><a href="#internship" data-zh="实习经历" data-en="Internship">实习经历</a></li>
+            <li><a href="#publication" data-zh="论文发表" data-en="Publication">论文发表</a></li>
+            <li><a href="#projects" data-zh="项目经历" data-en="Projects">项目经历</a></li>
+            <li><a href="#activities" data-zh="实践经历" data-en="Activities">实践经历</a></li>
+            <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
+        </ul>
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btnZh" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" id="btnEn" onclick="switchLang('en')">EN</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-photo">
+            <img src="photo.jpg" alt="李时光 | Li Shiguang">
+        </div>
+        <div class="hero-info">
+            <h1 id="heroName">李时光</h1>
+            <div class="subtitle" id="heroSubtitle">经济统计学 · 北京工商大学</div>
+            <p class="bio" id="heroBio">
+                我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。
+            </p>
+            <div class="contact-row">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> 15311168073
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:lishiguang8073@gmail.com">lishiguang8073@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="heroLocation">北京市朝阳区</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/lsgggggg" target="_blank">github.com/lsgggggg</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="main-content">
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section class="section fade-in" id="education">
+        <div class="section-header">
+            <i class="fas fa-graduation-cap"></i>
+            <h2 data-zh="教育背景" data-en="Education">教育背景</h2>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/zh/thumb/c/cb/BTBU_logo.png/200px-BTBU_logo.png" alt="BTBU" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title">
+                            <a href="https://www.btbu.edu.cn" target="_blank" data-zh="北京工商大学" data-en="Beijing Technology and Business University">北京工商大学</a>
+                        </div>
+                        <div class="card-subtitle" data-zh="经济统计学 · 学士" data-en="Economics and Statistics · Bachelor of Science">经济统计学 · 学士</div>
+                    </div>
+                </div>
+                <span class="card-date">2023.09 – 2027.06</span>
+            </div>
+            <div class="card-body">
+                <div class="edu-meta">
+                    <span class="edu-badge gpa"><i class="fas fa-chart-line"></i> GPA: 4.01 / 5.00</span>
+                </div>
+
+                <p style="margin-top: 0.8rem;"><strong data-zh="专业课程" data-en="Core Courses">专业课程</strong></p>
+                <div class="courses-grid" id="coursesZh">
+                    <span class="course-tag">高等数学 <span class="course-score">(97)</span></span>
+                    <span class="course-tag">线性代数 <span class="course-score">(94)</span></span>
+                    <span class="course-tag">概率论与数理统计 <span class="course-score">(92)</span></span>
+                    <span class="course-tag">计量经济学 <span class="course-score">(91)</span></span>
+                    <span class="course-tag">时间序列分析 <span class="course-score">(96)</span></span>
+                    <span class="course-tag">回归分析 <span class="course-score">(95)</span></span>
+                    <span class="course-tag">非参数统计 <span class="course-score">(94)</span></span>
+                    <span class="course-tag">多元统计分析 <span class="course-score">(93)</span></span>
+                    <span class="course-tag">数据科学 <span class="course-score">(95)</span></span>
+                    <span class="course-tag">计算机技术（Python）<span class="course-score">(91)</span></span>
+                    <span class="course-tag">R 软件基础与统计分析应用 <span class="course-score">(100)</span></span>
+                    <span class="course-tag">金融学 <span class="course-score">(94)</span></span>
+                    <span class="course-tag">西方经济学 <span class="course-score">(96)</span></span>
+                </div>
+                <div class="courses-grid" id="coursesEn" style="display:none;">
+                    <span class="course-tag">Advanced Mathematics <span class="course-score">(97)</span></span>
+                    <span class="course-tag">Linear Algebra <span class="course-score">(94)</span></span>
+                    <span class="course-tag">Probability & Mathematical Statistics <span class="course-score">(92)</span></span>
+                    <span class="course-tag">Econometrics <span class="course-score">(91)</span></span>
+                    <span class="course-tag">Time Series Analysis <span class="course-score">(96)</span></span>
+                    <span class="course-tag">Regression Analysis <span class="course-score">(95)</span></span>
+                    <span class="course-tag">Non-parametric Statistics <span class="course-score">(94)</span></span>
+                    <span class="course-tag">Multivariate Statistical Analysis <span class="course-score">(93)</span></span>
+                    <span class="course-tag">Data Science <span class="course-score">(95)</span></span>
+                    <span class="course-tag">Computer Technology (Python) <span class="course-score">(91)</span></span>
+                    <span class="course-tag">R for Statistical Analysis <span class="course-score">(100)</span></span>
+                    <span class="course-tag">Finance <span class="course-score">(94)</span></span>
+                    <span class="course-tag">Western Economics <span class="course-score">(96)</span></span>
+                </div>
+
+                <p style="margin-top: 0.8rem;">
+                    <strong data-zh="竞赛奖项" data-en="Competition Awards">竞赛奖项</strong>
+                    <span data-zh="：全国大学生统计建模大赛省级（北京市）一等奖、WorldQuant 量化投资大赛金牌" data-en=": National College Student Statistical Modeling Competition Provincial (Beijing) First Prize; WorldQuant Quantitative Investment Competition Gold Medal">：全国大学生统计建模大赛省级（北京市）一等奖、WorldQuant 量化投资大赛金牌</span>
+                </p>
+                <p>
+                    <strong data-zh="其他奖项" data-en="Other Awards">其他奖项</strong>
+                    <span data-zh="：校级竞赛类奖学金、思源宣讲团宣讲比赛院级一等奖、军训板报比赛校级二等奖" data-en=": University-level Competition Scholarship; Siyuan Lecture Team Speech Competition College-level First Prize; Military Training Poster Competition University-level Second Prize">：校级竞赛类奖学金、思源宣讲团宣讲比赛院级一等奖、军训板报比赛校级二等奖</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INTERNSHIP ==================== -->
+    <section class="section fade-in" id="internship">
+        <div class="section-header">
+            <i class="fas fa-briefcase"></i>
+            <h2 data-zh="实习经历" data-en="Internship Experience">实习经历</h2>
+        </div>
+
+        <!-- Deloitte -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/200px-Deloitte.svg.png" alt="Deloitte" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title">
+                            <a href="https://www2.deloitte.com/cn/zh.html" target="_blank" data-zh="德勤管理咨询（上海）有限公司" data-en="Deloitte Consulting (Shanghai) Co. Ltd. Beijing Branch">德勤管理咨询（上海）有限公司</a>
+                        </div>
+                        <div class="card-subtitle" data-zh="税务与商务咨询部" data-en="Tax & Business Advisory">税务与商务咨询部</div>
+                    </div>
+                </div>
+                <span class="card-date">2026.02 – 2026.03</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>实习概述：</strong>参与 OECD 支柱二全球最低税合规项目，服务中粮集团、太平洋保险、中国信达、长城汽车等多家大型企业客户，独立承担实体股权架构分析、基础信息表编制、公司名称翻译及财务数据汇总等数据全流程工作</p>
+                    <p><strong>工具开发：</strong>主导中粮集团 1,258 家实体的股权结构数据清洗，面对大量公司名称前后不一致导致 Excel 公式无法自动匹配的问题，自主开发 Python 模糊匹配程序，基于字符串相似度算法实现实体名称自动比对与分级归类，生成匹配报告交付团队与客户确认。基于上述数据处理痛点，进一步开发通用型 Excel 标准化工具（支持大小写统一、空格规范化、CJK 字符清洗），两种工具均以 Flask 构建 Web 界面并开源至 GitHub，形成可复用的工具化解决方案 <a href="https://github.com/lsgggggg/NameLink" target="_blank" class="github-link"><i class="fab fa-github"></i>NameLink</a> <a href="https://github.com/lsgggggg/Excel-Standardizer" target="_blank" class="github-link"><i class="fab fa-github"></i>Excel-Standardizer</a></p>
+                    <p><strong>股权穿透：</strong>负责太平洋保险集团近 200 家实际控制企业的股权穿透分析，综合运用启信宝、天眼查等企业信息平台进行交叉验证，梳理多层嵌套股权架构，输出并表所需的标准化股权结构信息</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Overview:</strong> Participated in OECD Pillar Two Global Minimum Tax compliance projects, serving major enterprise clients including COFCO Group, Pacific Insurance, China Cinda, and Great Wall Motor; independently handled full-cycle data tasks including entity equity structure analysis, basic information table compilation, company name translation, and financial data consolidation.</p>
+                    <p><strong>Tool Development:</strong> Led data cleansing of equity structure data for 1,258 entities of COFCO Group; to address inconsistent company names causing Excel formula matching failures, independently developed a Python fuzzy matching tool based on string similarity algorithms to automate entity name comparison and hierarchical classification, generating matching reports for team and client confirmation. Building on these data processing pain points, further developed a general-purpose Excel standardization tool (supporting case normalization, whitespace standardization, and CJK character cleansing); both tools built with Flask web interface and open-sourced on GitHub as reusable solutions <a href="https://github.com/lsgggggg/NameLink" target="_blank" class="github-link"><i class="fab fa-github"></i>NameLink</a> <a href="https://github.com/lsgggggg/Excel-Standardizer" target="_blank" class="github-link"><i class="fab fa-github"></i>Excel-Standardizer</a></p>
+                    <p><strong>Equity Penetration:</strong> Responsible for equity penetration analysis of approximately 200 actually controlled entities of Pacific Insurance Group; cross-validated using Qixinbao, Tianyancha, and other enterprise information platforms; mapped multi-layer nested equity structures and produced standardized equity structure information for consolidation purposes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bank of Communications -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Bank_of_Communications_logo.svg/200px-Bank_of_Communications_logo.svg.png" alt="BoCom" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title">
+                            <a href="https://www.bankcomm.com" target="_blank" data-zh="交通银行" data-en="Bank of Communications">交通银行</a>
+                        </div>
+                        <div class="card-subtitle" data-zh="对公业务部" data-en="Corporate Banking">对公业务部</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.07 – 2025.08</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>授信分析：</strong>参与企业授信报告编写与财务尽调工作，运用企查查等平台采集目标企业工商信息、股权结构等数据；深入分析客户财务报表，运用 Excel 构建信用评分模型，结合多种图表分析方法，从偿债能力（流动比率、速动比率）等多维度量化评估企业信用风险，为信贷审批决策提供数据支撑。</p>
+                    <p><strong>业务管理：</strong>协助完成对公业务全流程管理，整理汇总外汇业务等 12 类高频业务咨询记录，建立标准化知识体系；参与企业银行账户开户流程，协助审核企业营业执照等开户资料，熟悉外汇业务登记、询证函办理等业务流程。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Credit Analysis:</strong> Participated in corporate credit report writing and financial due diligence; collected company registration information and equity structure data via Qichacha; conducted in-depth analysis of client financial statements; built a credit scoring model in Excel using multiple chart analysis methods to quantitatively assess corporate credit risk across dimensions including solvency (current ratio, quick ratio), providing data support for credit approval decisions.</p>
+                    <p><strong>Business Management:</strong> Assisted in full-process management of corporate banking operations; compiled and organized 12 categories of high-frequency business consultation records including foreign exchange services, establishing a standardized knowledge base; participated in corporate bank account opening processes; familiar with foreign exchange registration and letter of inquiry procedures.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sinopec -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/zh/thumb/3/34/Sinopec.svg/200px-Sinopec.svg.png" alt="Sinopec" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title">
+                            <a href="https://www.sinopec.com" target="_blank" data-zh="中石化石油工程建设有限公司" data-en="Sinopec Petroleum Engineering & Construction Co., LTD">中石化石油工程建设有限公司</a>
+                        </div>
+                        <div class="card-subtitle" data-zh="财务部" data-en="Finance Dept.">财务部</div>
+                    </div>
+                </div>
+                <span class="card-date">2024.07 – 2024.08</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>毛利对标：</strong>参与某项目的跨单位毛利率对标分析，运用 Excel 处理所属施工单位在系统内外主要市场的经营数据；通过横纵向对比分析近年毛利率变化趋势，识别各单位市场竞争优势，为项目投标策略优化提供数据支撑。</p>
+                    <p><strong>风控建模：</strong>协助搭建两套财务风控模型并完善可视化分析工作：①合同资产质量评价模型：抽取 190 余个项目的新增合同资产样本，从收入结算及时性得分、超合同额确认风险得分、项目完工状态得分三大维度构建加权综合评分体系；运用 Excel 进行数据清洗并计算新增合同资产质量综合得分，精准识别 35 个超合同额项目风险敞口；②市场质量分析模型：整合 21 个细分市场共 4,000 余个项目数据，从项目毛利率等关键指标进行多维量化分析；建立横向单位间对标、纵向 5 年趋势分析的双向评价机制，成功识别高风险市场领域，为优化新签合同布局提供决策依据。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Gross Margin Benchmarking:</strong> Participated in cross-unit gross margin benchmarking analysis for a specific project; processed operating data of affiliated construction units across major markets using Excel; identified market competitive advantages through horizontal and vertical comparative analysis of gross margin trends over recent years, providing data support for bidding strategy optimization.</p>
+                    <p><strong>Risk Control Modeling:</strong> Assisted in building two financial risk control models with visualization: ①Contract Asset Quality Evaluation Model: extracted samples of newly added contract assets from 190+ projects and built a weighted composite scoring system across three dimensions (revenue settlement timeliness, over-contract recognition risk, project completion status); performed data cleansing in Excel to calculate quality scores, precisely identifying risk exposures of 35 over-contract projects; ②Market Quality Analysis Model: integrated data from 4,000+ projects across 21 sub-markets with multi-dimensional quantitative analysis of key metrics including project gross margin; established a dual evaluation mechanism of cross-unit horizontal benchmarking and 5-year vertical trend analysis, successfully identifying high-risk market segments and providing decision support for optimizing new contract allocation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PUBLICATION ==================== -->
+    <section class="section fade-in" id="publication">
+        <div class="section-header">
+            <i class="fas fa-file-alt"></i>
+            <h2 data-zh="论文发表" data-en="Publication">论文发表</h2>
+        </div>
+        <div class="card pub-card">
+            <div class="pub-title">Orion: Spatiotemporal Neural Networks with Self-Validating Directed Graphs for Traffic and Epidemic Forecasting</div>
+            <div class="pub-meta">
+                <span class="pub-badge author" data-zh="第一作者（通讯）" data-en="First Author (Corresponding)">第一作者（通讯）</span>
+                <span class="pub-badge venue">KDD 2026 Research Track Cycle 2</span>
+                <span class="pub-badge status">Under Review</span>
+                <a href="https://github.com/lsgggggg/Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>问题切入：</strong>现有时空 GNN 依赖对称邻接矩阵，无法区分"谁影响谁"，交通事故沿 A→B→C 单向传播拥堵，对称图却错误赋予 C→A 权重；且已有图学习方法缺乏机制验证学到的边权是否具有预测意义而非虚假相关。</p>
+                    <p><strong>方法设计：</strong>提出 Orion 框架，核心 TE-CausGAT 模块基于 Granger 因果原理分段估计时变有向依赖矩阵，通过贝叶斯融合整合学习结构与先验邻接；首创预测一致性自验证——对节点 i 执行 mask 干预后测量节点 j 预测变化Δŷ_j，要求其与边权 C_{ij} 一致，训练中自动过滤未通过干预测试的虚假边。架构上 Belt Block 并行建模小时/日/周三尺度，三阶段渐进训练避免联合优化的局部最优。</p>
+                    <p><strong>实验结果：</strong>5 个基准上取得 SOTA：METR-LA MAE 降低 6.60%，PEMS-08 降低 8.65%，流行病数据 CA/TX 分别降低 22.70% 和 37.73%。DREAM-3 基因调控网络有向图发现 AUC 达 0.6295，超越最强基线 CUTS 6.42%，验证所学结构与 ground-truth 因果关系的一致性</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Problem Motivation:</strong> Existing spatiotemporal GNNs rely on symmetric adjacency matrices and cannot distinguish "who influences whom"; traffic accidents propagate congestion unidirectionally along A→B→C, yet symmetric graphs erroneously assign weight to C→A. Moreover, existing graph learning methods lack mechanisms to verify whether learned edge weights carry predictive significance rather than spurious correlation.</p>
+                    <p><strong>Method Design:</strong> Proposed the Orion framework with a core TE-CausGAT module that estimates time-varying directed dependency matrices via Granger causality principles and integrates learned structures with prior adjacency through Bayesian fusion; pioneered prediction consistency self-validation—masking node i to measure prediction change Δŷj of node j, requiring consistency with edge weight Cij, and automatically filtering spurious edges failing the intervention test during training. Architecturally, Belt Block models three temporal scales (hourly/daily/weekly) in parallel, with three-stage progressive training to avoid joint optimization local optima.</p>
+                    <p><strong>Experimental Results:</strong> Achieved SOTA across 5 benchmarks: METR-LA MAE reduced by 6.60%, PEMS-08 by 8.65%, epidemic datasets CA/TX reduced by 22.70% and 37.73% respectively. Directed graph discovery AUC on DREAM-3 gene regulatory network reached 0.6295, surpassing the strongest baseline CUTS by 6.42%, validating consistency between learned structures and ground-truth causal relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section fade-in" id="projects">
+        <div class="section-header">
+            <i class="fas fa-code"></i>
+            <h2 data-zh="项目经历" data-en="Project Experience">项目经历</h2>
+        </div>
+
+        <!-- Air China -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Air_China_logo.svg/200px-Air_China_logo.svg.png" alt="Air China" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title" data-zh="中国国航经营分析与五维竞争力评价" data-en="Air China Business Analysis and Five-Dimensional Competitiveness Evaluation">中国国航经营分析与五维竞争力评价</div>
+                        <div class="card-subtitle" data-zh="核心成员" data-en="Core Member">核心成员</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.11 – 2025.12</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>舆情采集：</strong>复现并优化开源爬虫 EastMoney_Crawler，使用 Selenium 模拟浏览器访问东方财富股吧，结合 CSS 选择器提取帖子标题、浏览量、发帖时间等字段，配合随机延时与 stealth.js 反检测注入规避反爬；数据落盘 MongoDB，共采集国航、东航、南航三家公司 2.5 万条全年舆情数据，清洗后输出标准化 CSV</p>
+                    <p><strong>情感分析：</strong>构建两套评分方案并系统对比——①CFSD 金融词典在 Excel 中通过 LEN/SUBSTITUTE 统计正负词频计算归一化得分；②FinBERT（bert-base-chinese 金融微调）使用 T4 GPU 批量推理提取三分类概率计算连续得分。通过 6 组典型案例定量论证 FinBERT 在否定句式、反讽及隐含情感场景下的优越性（如"恐慌时反着来"词典误判 25 分、FinBERT 正确识别 58.64 分），最终采用 FinBERT 得分纳入评价体系。</p>
+                    <p><strong>综合评价：</strong>参与构建"财务三维+舆情+ESG"五维竞争力模型，采用 Min-Max 标准化与多组权重稳健性检验，量化三大航在资源、运营、适配、市场感知及可持续发展维度的结构性差异。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Sentiment Data Collection:</strong> Reproduced and optimized the open-source crawler EastMoney_Crawler; used Selenium to simulate browser access to EastMoney stock forums, extracting fields such as post titles, view counts, and posting times via CSS selectors; combined random delays and stealth.js anti-detection injection to bypass crawlers; stored data in MongoDB, collecting 25,000 full-year sentiment records across Air China, China Eastern, and China Southern; outputted standardized CSV after cleansing.</p>
+                    <p><strong>Sentiment Analysis:</strong> Built and systematically compared two scoring schemes: ①CFSD Financial Dictionary using LEN/SUBSTITUTE in Excel to calculate normalized positive/negative word frequency scores; ②FinBERT (bert-base-chinese financial fine-tune) using T4 GPU batch inference to extract three-class probabilities and compute continuous scores. Quantitatively demonstrated FinBERT's superiority across 6 typical cases involving negation, sarcasm, and implicit sentiment (e.g., "panic, buy the opposite" misclassified by dictionary at 25 pts, correctly identified by FinBERT at 58.64 pts); ultimately adopted FinBERT scores in the evaluation framework.</p>
+                    <p><strong>Comprehensive Evaluation:</strong> Participated in building the "Financial 3D + Sentiment + ESG" five-dimensional competitiveness model; applied Min-Max normalization and multi-weight robustness testing to quantify structural differences among the three major airlines across dimensions of resources, operations, adaptability, market perception, and sustainable development.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WorldQuant -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/WorldQuant_logo.png/200px-WorldQuant_logo.png" alt="WorldQuant" onerror="this.style.display='none'">
+                    <div>
+                        <div class="card-title" data-zh="WorldQuant 量化投资大赛金牌" data-en="WorldQuant Quantitative Investment Competition Gold Medal">WorldQuant 量化投资大赛金牌</div>
+                        <div class="card-subtitle" data-zh="个人项目" data-en="Individual Project">个人项目</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.08 – <span data-zh="至今" data-en="Present">至今</span></span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>WorldQuant 量化投资大赛：</strong>大赛聚焦 Alpha 因子挖掘与优化。开发 10 余个高质量因子（Sharpe≥1.25，换手率≤70%），涵盖价量特征、财务指标、另类数据等维度。通过特征工程优化信号质量，控制交易成本。目前累计得分 19,538，全球排名前 5%，获得大赛金牌与 WorldQuant 量化顾问资格。</p>
+                    <p><strong>因子验证与多因子模型构建：</strong>筛选表现优异因子（Sharpe≥2.0）迁移至 A 股市场，使用 Tushare 获取全市场历史数据，搭建标准化单因子检验框架（含收益率分析、IC/IR 计算、分层回测等），验证因子有效性；整合 Sharpe≥1.0 的优质因子，基于 2018 年至今 A 股数据，构建 XGBoost/LightGBM 集成学习模型，实现因子非线性融合。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>WorldQuant Competition:</strong> Competition focuses on Alpha factor mining and optimization. Developed 10+ high-quality factors (Sharpe ≥1.25, turnover ≤70%), covering price-volume features, financial indicators, and alternative data dimensions; optimized signal quality through feature engineering while controlling transaction costs. Currently accumulated score of 19,538, Top 5% globally, awarded Gold Medal and WorldQuant Quant Advisor qualification.</p>
+                    <p><strong>Factor Validation & Multi-factor Model Construction:</strong> Migrated top-performing factors (Sharpe ≥2.0) to the A-share market; used Tushare to obtain full-market historical data; built a standardized single-factor testing framework (including return analysis, IC/IR calculation, and layered backtesting); validated factor effectiveness; integrated high-quality factors (Sharpe ≥1.0) and constructed an XGBoost/LightGBM ensemble learning model based on A-share data from 2018 to present for non-linear factor fusion.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weibo -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="微博热词数据挖掘项目" data-en="Weibo Trending Words Data Mining Project">微博热词数据挖掘项目</div>
+                        <div class="card-subtitle" data-zh="数据采集负责人" data-en="Data Collection Lead">数据采集负责人</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.07 – 2025.08</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>舆情采集：</strong>基于 Selenium 与 ChromeDriver 搭建微博关键词语料自动化采集管线，采用 7 日滑动时间窗口分段策略规避搜索接口分页上限，通过 XPath 结构化抽取发布人、时间及正文字段，累计采集数万条语料并以 Excel 格式交付，支撑后续文本挖掘与情感分析建模。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Data Collection:</strong> Built an automated Weibo keyword corpus collection pipeline based on Selenium and ChromeDriver; adopted a 7-day sliding window segmentation strategy to bypass search API pagination limits; structurally extracted author, timestamp, and content fields via XPath; accumulated tens of thousands of records delivered in Excel format, supporting downstream text mining and sentiment analysis modeling.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistical Modeling Competition -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="全国大学生统计建模大赛省级一等奖" data-en="National College Student Statistical Modeling Competition Provincial First Prize">全国大学生统计建模大赛省级一等奖</div>
+                        <div class="card-subtitle" data-zh="队长" data-en="Team Leader">队长</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.03 – 2025.04</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>技术创新：</strong>提出面向交通流量预测的深度学习模型，设计基于 KNN 的动态图注意力网络与多头自注意力融合模块，构建三周期输入及权重约束机制捕捉多尺度时空依赖；该工作为后续 KDD 2026 投稿论文 Orion 框架奠定了基础。 <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
+                    <p><strong>实验验证：</strong>带领团队处理 PeMS 等 5 个大规模交通数据集（1000+ 监测点、10 万+ 时间步），预测 MAE 较基线降低 15–30%，长期预测误差增长率降低 50%；斩获北京市省级一等奖。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Technical Innovation:</strong> Proposed a deep learning model for traffic flow prediction; designed a KNN-based dynamic graph attention network fused with multi-head self-attention module; constructed a three-period input and weight constraint mechanism to capture multi-scale spatiotemporal dependencies; this work laid the foundation for the subsequently submitted KDD 2026 paper Orion framework. <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
+                    <p><strong>Experimental Validation:</strong> Led the team in processing 5 large-scale traffic datasets from PeMS and others (1,000+ monitoring points, 100,000+ time steps); prediction MAE reduced by 15–30% compared to baselines, long-term prediction error growth rate reduced by 50%; won Beijing provincial-level First Prize.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Excel Translation Tool -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="Excel 多语翻译工具开发项目" data-en="Excel Multilingual Translation Tool Development">Excel 多语翻译工具开发项目</div>
+                        <div class="card-subtitle" data-zh="独立开发者" data-en="Independent Developer">独立开发者</div>
+                    </div>
+                </div>
+                <span class="card-date">2025.02 – 2025.03</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>工具开发：</strong>独立设计并开发一款 Excel 多语翻译工具（Python 5000+ LOC），集成 DeepSeek、Claude 等 5 种翻译引擎，实现单元格内容智能分类（公式/数字/URL 等自动跳过）、JSON 批量翻译、断点续传与指数退避重试机制；基于 Flask + SSE 构建 Web 可视化界面，支持实时进度推送、双语对照翻译报告生成。目前程序已开源至 GitHub <a href="https://github.com/lsgggggg/ExcelTranslator-Pro" target="_blank" class="github-link"><i class="fab fa-github"></i>ExcelTranslator-Pro</a></p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Tool Development:</strong> Independently designed and developed an Excel multilingual translation tool (Python 5,000+ LOC), integrating 5 translation engines including DeepSeek and Claude; implemented intelligent content classification (formulas/numbers/URLs auto-skipped), JSON batch translation, checkpoint resume, and exponential backoff retry; built a Flask + SSE web visualization interface supporting real-time progress updates and bilingual comparison translation report generation; currently open-sourced on GitHub <a href="https://github.com/lsgggggg/ExcelTranslator-Pro" target="_blank" class="github-link"><i class="fab fa-github"></i>ExcelTranslator-Pro</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stock Price Prediction -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="基于自研多模态 Transformers 和 LLM 的股价预测研究" data-en="Stock Price Prediction Based on Self-Developed Multimodal Transformers and LLM">基于自研多模态 Transformers 和 LLM 的股价预测研究</div>
+                        <div class="card-subtitle" data-zh="个人项目" data-en="Individual Project">个人项目</div>
+                    </div>
+                </div>
+                <span class="card-date">2024.09 – <span data-zh="至今" data-en="Present">至今</span></span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>技术方案：</strong>使用网络爬虫构建新数据集并设计创新多模态 Transformers 架构。融合预训练 BERT 处理新闻文本，采用多头注意力机制处理六大股价技术指标；通过优化 Encoder-Decoder 结构增强模型的长期依赖捕捉能力。</p>
+                    <p><strong>项目成果：</strong>独立完成模型开发，初步实验预测精度显著优于传统模型；正进行超参数优化，目标高水平会议论文。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Technical Approach:</strong> Built a new dataset using web crawlers and designed an innovative multimodal Transformers architecture; integrated pre-trained BERT for news text processing; applied multi-head attention mechanism to handle six key stock technical indicators; enhanced long-term dependency capture by optimizing the Encoder-Decoder structure.</p>
+                    <p><strong>Project Outcomes:</strong> Independently completed model development; preliminary experiments show prediction accuracy significantly outperforming traditional models; currently conducting hyperparameter optimization with the goal of publishing in a top-tier conference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACTIVITIES ==================== -->
+    <section class="section fade-in" id="activities">
+        <div class="section-header">
+            <i class="fas fa-users"></i>
+            <h2 data-zh="实践经历" data-en="Extracurricular Activities">实践经历</h2>
+        </div>
+
+        <!-- Siyuan Lecture -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="数学与统计学院思源宣讲团 · 宣讲员" data-en="School of Mathematics and Statistics Siyuan Lecture Team · Lecturer">数学与统计学院思源宣讲团 · 宣讲员</div>
+                    </div>
+                </div>
+                <span class="card-date">2024.05 – 2024.10</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>内容设计：</strong>深入研究"自指问题"的理论内涵与现实意义，查阅 20+ 篇相关文献资料，设计 15 分钟的宣讲内容，创新性地将抽象概念与生活实例相结合，同时阐述了对人工智能的深入思考，在学院思源宣讲比赛中斩获一等奖（前 5%）。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Content Design:</strong> Conducted in-depth research on the theoretical significance and real-world implications of "self-referential problems"; reviewed 20+ related academic papers; designed a 15-minute presentation that innovatively combined abstract concepts with everyday examples while articulating deep reflections on artificial intelligence; won First Prize (Top 5%) in the College Siyuan Lecture Competition.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Freelance Photographer -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="自由摄影师与创业实践 · 第一负责人" data-en="Freelance Photographer & Entrepreneurial Practice · Principal Founder">自由摄影师与创业实践 · 第一负责人</div>
+                    </div>
+                </div>
+                <span class="card-date">2024.01 – 2024.03</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>实践综述：</strong>制定多渠道获客方案，在天坛公园等热门景区设立固定拍摄点位与个人定制路线，独立完成从客户需求分析到后期修图全流程；2 个月内实现营业收入 2 万元，积累优质作品 500+ 张，客户好评率达 98%。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Overview:</strong> Developed a multi-channel client acquisition strategy; established fixed shooting spots and personalized route services at popular scenic spots such as the Temple of Heaven; independently handled the full process from client needs analysis to post-production editing; generated revenue of CNY 20,000 in 2 months, accumulated 500+ quality works, with a 98% client satisfaction rate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photography Dept -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="学院摄影部 · 摄影干事" data-en="College Photography Department · Photography Officer">学院摄影部 · 摄影干事</div>
+                    </div>
+                </div>
+                <span class="card-date">2023.09 – 2024.06</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>摄影执行：</strong>负责校级运动会、各类表彰大会等 30+ 场活动拍摄；熟练掌握 LR、PS 等工具，形成标准化工作流程</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Photography Execution:</strong> Responsible for shooting 30+ events including university-level sports meets and commendation ceremonies; proficient in LR, PS and other tools with a standardized workflow established.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section fade-in" id="skills">
+        <div class="section-header">
+            <i class="fas fa-tools"></i>
+            <h2 data-zh="技能 / 兴趣" data-en="Skills & Interests">技能 / 兴趣</h2>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-language"></i> <span data-zh="语言技能" data-en="Language Skills">语言技能</span></h3>
+                <p data-zh="雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩" data-en="IELTS 6.5, CET-6: 513, ETIC (Intermediate) with &quot;Good&quot; rating">雅思 6.5 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩</p>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fas fa-laptop-code"></i> <span data-zh="编程与数据分析" data-en="Programming & Data Analysis">编程与数据分析</span></h3>
+                <div data-lang="zh">
+                    <p>Python（Pandas / NumPy / PyTorch / Scikit-learn）、R、SQL、C语言；熟悉时序与图结构数据建模，能独立搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p>Python (Pandas / NumPy / PyTorch / Scikit-learn), R, SQL, C; proficient in time-series and graph-structured data modeling; capable of independently building end-to-end ML Pipelines from data cleansing and feature engineering to model optimization.</p>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fas fa-wrench"></i> <span data-zh="工具与平台" data-en="Tools & Platforms">工具与平台</span></h3>
+                <div data-lang="zh">
+                    <p>LaTeX、SPSS、EViews；MS Office（已通过计算机二级考试）；能熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验，显著提升数据处理与代码开发效率。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p>LaTeX, SPSS, EViews; MS Office (passed Computer Proficiency Level 2 Exam); proficient with AI-assisted development tools including Claude Code and GitHub Copilot; skilled in Prompt Engineering and AI Agent workflows; experienced in deploying open-source Agents such as OpenClaw and developing Skills, significantly enhancing data processing and coding efficiency.</p>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">SPSS</span>
+                    <span class="skill-tag">EViews</span>
+                    <span class="skill-tag">MS Office</span>
+                    <span class="skill-tag">Claude Code</span>
+                    <span class="skill-tag">GitHub Copilot</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fas fa-heart"></i> <span data-zh="兴趣爱好" data-en="Interests & Hobbies">兴趣爱好</span></h3>
+                <div class="interests-row">
+                    <span class="interest-item" data-zh="🎵 葫芦丝（10 级）" data-en="🎵 Hulusi (Grade 10)">🎵 葫芦丝（10 级）</span>
+                    <span class="interest-item" data-zh="🎹 钢琴（五级）" data-en="🎹 Piano (Grade 5)">🎹 钢琴（五级）</span>
+                    <span class="interest-item" data-zh="🎶 竹笛（四级）" data-en="🎶 Bamboo Flute (Grade 4)">🎶 竹笛（四级）</span>
+                    <span class="interest-item" data-zh="🎨 油画" data-en="🎨 Oil Painting">🎨 油画</span>
+                    <span class="interest-item" data-zh="🖌️ 水彩" data-en="🖌️ Watercolor">🖌️ 水彩</span>
+                    <span class="interest-item" data-zh="🏸 羽毛球" data-en="🏸 Badminton">🏸 羽毛球</span>
+                    <span class="interest-item" data-zh="🏀 篮球" data-en="🏀 Basketball">🏀 篮球</span>
+                    <span class="interest-item" data-zh="🏓 乒乓球" data-en="🏓 Table Tennis">🏓 乒乓球</span>
+                    <span class="interest-item" data-zh="📸 摄影" data-en="📸 Photography">📸 摄影</span>
+                    <span class="interest-item" data-zh="🧩 魔方" data-en="🧩 Rubik's Cube">🧩 魔方</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p data-zh="© 2026 李时光 · 使用 ❤️ 构建" data-en="© 2026 Li Shiguang · Built with ❤️">© 2026 李时光 · 使用 ❤️ 构建</p>
+    <p style="margin-top: 0.3rem;">
+        <a href="https://github.com/lsgggggg" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:lishiguang8073@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </p>
+</footer>
+
+<script>
+    // ===== Language Switching =====
+    let currentLang = 'zh';
+
+    function switchLang(lang) {
+        currentLang = lang;
+
+        // Toggle button states
+        document.getElementById('btnZh').classList.toggle('active', lang === 'zh');
+        document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+
+        // Update nav brand
+        document.getElementById('navBrand').textContent = lang === 'zh' ? '李时光' : 'Li Shiguang';
+
+        // Update hero
+        document.getElementById('heroName').textContent = lang === 'zh' ? '李时光' : 'Li Shiguang';
+        document.getElementById('heroSubtitle').textContent = lang === 'zh'
+            ? '经济统计学 · 北京工商大学'
+            : 'Economics & Statistics · Beijing Technology and Business University';
+
+        // Update hero bio
+        document.getElementById('heroBio').textContent = lang === 'zh'
+            ? '我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。'
+            : 'I submitted a spatiotemporal prediction paper to KDD 2026 Research Track as first author, and won a Gold Medal (Top 5% globally) in the WorldQuant Quantitative Investment Competition, demonstrating full-stack quantitative research capabilities from deep learning modeling to Alpha factor mining. Additionally, I have accumulated hands-on data processing and risk control modeling experience through internships at Deloitte, Bank of Communications, and Sinopec Engineering, and have led the development of Python fuzzy matching and data standardization tools, excelling at using technology to solve real business pain points. As an undergraduate in Economics and Statistics at Beijing Technology and Business University (GPA 4.01/5.00), I possess a solid foundation in mathematics and statistics, am proficient in Python, R, SQL, and C, and can independently build end-to-end ML Pipelines from data cleansing and feature engineering to model optimization. I am also skilled in leveraging AI-assisted development tools like Claude Code, with practical experience in Prompt Engineering and AI Agent workflows, capable of building automated task flows using open-source Agents like OpenClaw, and possess Vibe Coding abilities to rapidly prototype innovative ideas. I have a strong passion for learning and self-motivation, willing to face the unknown and quickly adapt to new domains, continuously pushing the boundaries of my capabilities in data mining and quantitative research.';
+
+        // Update location
+        document.getElementById('heroLocation').textContent = lang === 'zh' ? '北京市朝阳区' : 'Chaoyang District, Beijing';
+
+        // Update courses
+        document.getElementById('coursesZh').style.display = lang === 'zh' ? 'flex' : 'none';
+        document.getElementById('coursesEn').style.display = lang === 'en' ? 'flex' : 'none';
+
+        // Update all data-lang blocks
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+        });
+
+        // Update all data-zh / data-en elements (text content)
+        document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text && !el.querySelector('[data-lang]') && !el.querySelector('[data-zh]')) {
+                el.textContent = text;
+            }
+        });
+
+        // Update nav links
+        document.querySelectorAll('.nav-links a[data-zh]').forEach(el => {
+            el.textContent = el.getAttribute('data-' + lang);
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    // ===== Scroll Animations =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ===== Smooth Scroll for Nav Links =====
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // ===== Navbar Scroll Effect =====
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 10) {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
