@@ -777,7 +777,7 @@
             <h1 id="heroName">李时光</h1>
             <div class="subtitle" id="heroSubtitle">经济统计学 · 北京工商大学</div>
             <p class="bio" id="heroBio">
-                我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。
+                我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我熟练掌握 Python、R、SQL、C 语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。以雅思写作 AI 智能评审系统为例，我独立基于 Claude Code 构建了完整的 Agent Pipeline，以 SKILL.md 为调度入口串联题目解读、个性化批改、四维评分与网站自动生成四大模块，实现用户一条指令即可完成从投稿作文到输出学习网页的端到端全链路交付；系统后续成功从大作文平滑扩展至小作文，验证了模块化 Prompt 架构在真实产品场景下的可扩展性与工程落地能力。我的学习热情与自驱力较强，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续学习更高水平的理念与方法，期待在数据挖掘与量化研究岗位上为团队创造价值的同时不断提升自己的能力上限。
             </p>
         </div>
     </div>
@@ -986,6 +986,31 @@
         <div class="section-header">
             <i class="fas fa-code"></i>
             <h2 data-zh="项目经历" data-en="Project Experience">项目经历</h2>
+        </div>
+
+        <!-- IELTS AI Agent -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="雅思写作 AI Agent 智能评审与个人学习库开发" data-en="IELTS Writing AI Agent Intelligent Review & Personal Learning Library">雅思写作 AI Agent 智能评审与个人学习库开发</div>
+                        <div class="card-subtitle" data-zh="独立设计 & 开发" data-en="Independent Design & Development">独立设计 & 开发</div>
+                    </div>
+                </div>
+                <span class="card-date">2026.02 – 2026.03</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>系统架构：</strong>基于 Claude Code 的 Skill 机制，独立设计了一套模块化的 Prompt Engineering Pipeline。以 SKILL.md 为主控调度文件，串联题目解读、作文修改、网页生成三个独立提示词模块，配合雅思官方评分标准与高分范文语料库，构成完整技能包。用户只需将题目和原文放入指定目录，一条指令即可触发 Agent 自动执行完整的八步工作流。</p>
+                    <p><strong>评审流程：</strong>核心理念是构建个人定制化学习库而非通用批改工具。Agent 依次完成"学习评分标准→学习范文语料→解读题目→阅读原文→评审修改→生成文件→更新网页→交付成果"八步流程；修改策略采用"语法纠正→词汇提升→句式优化→内容建议"四级渐进机制，保留原文结构前提下精准提升，每处修改标注类型与理由；评分对接雅思官方实现四维度（TR/CC/LR/GRA）打分与前后对比，结合个人写作习惯与语料库生成可复用模板句式，兼顾评审精度与教学实用性。</p>
+                    <p><strong>产出与扩展：</strong>系统自动生成并增量更新个人学习网站（主页、写作模板页、好词好句页等），支持修改过程可视化、多视图切换与分类筛选等交互功能，并通过 GitHub Pages 部署实现手机电脑多端同步访问。在大作文批改系统成熟后，通过 Bootstrapping 将整套 Pipeline 平滑扩展至小作文评审，验证了模块化 Prompt 架构的可扩展性。 <a href="https://lsgggggg.github.io/IELTS-Task2-Writing-Archive/" target="_blank" class="github-link"><i class="fas fa-globe"></i>Task 2 学习网站</a> <a href="https://lsgggggg.github.io/IELTS-Task1-Writing-Archive/" target="_blank" class="github-link"><i class="fas fa-globe"></i>Task 1 学习网站</a></p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>System Architecture:</strong> Independently designed a modular Prompt Engineering Pipeline based on Claude Code's Skill mechanism. Using SKILL.md as the master dispatch file, the system chains three independent prompt modules — topic interpretation, essay revision, and webpage generation — together with official IELTS Band Descriptors and a high-scoring essay corpus to form a complete Agent skill package. Users simply place the topic and essay in a designated directory, and a single command triggers the Agent to automatically execute the full eight-step workflow.</p>
+                    <p><strong>Review Pipeline:</strong> The core philosophy is to build a personalized learning library rather than a generic correction tool. The Agent sequentially completes eight steps: learn scoring criteria → study sample essays → interpret topic → read original essay → review &amp; revise → generate files → update website → deliver results. The revision strategy adopts a four-tier progressive mechanism (grammar correction → vocabulary enhancement → sentence optimization → content suggestions), making targeted improvements while preserving the original structure, with each modification annotated by type and rationale. Scoring aligns with official IELTS four-dimensional assessment (TR/CC/LR/GRA) with before-and-after comparison, generating reusable template expressions tailored to personal writing habits.</p>
+                    <p><strong>Output & Extension:</strong> The system automatically generates and incrementally updates a personal learning website (homepage, writing templates, vocabulary highlights, etc.), supporting revision process visualization, multi-view switching, and category filtering, deployed via GitHub Pages for cross-device access. After the Task 2 (essay) system matured, the entire Pipeline was smoothly extended to Task 1 (report) via Bootstrapping, validating the extensibility of the modular Prompt architecture. <a href="https://lsgggggg.github.io/IELTS-Task2-Writing-Archive/" target="_blank" class="github-link"><i class="fas fa-globe"></i>Task 2 Learning Site</a> <a href="https://lsgggggg.github.io/IELTS-Task1-Writing-Archive/" target="_blank" class="github-link"><i class="fas fa-globe"></i>Task 1 Learning Site</a></p>
+                </div>
+            </div>
         </div>
 
         <!-- Air China -->
@@ -1238,10 +1263,10 @@
                 <div class="skill-cell" style="grid-column: 1 / -1;">
                     <h3><i class="fas fa-wrench"></i> <span data-zh="工具与平台" data-en="Tools & Platforms">工具与平台</span></h3>
                     <div data-lang="zh">
-                        <p>LaTeX、SPSS、EViews；MS Office（已通过计算机二级考试）；能熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验，显著提升数据处理与代码开发效率。</p>
+                        <p>LaTeX、SPSS、EViews；MS Office（已通过计算机二级考试）；能熟练使用 Claude Code、GitHub Copilot 等 AI 辅助开发工具链，掌握 Prompt Engineering 与 AI Agent 工作流，具备 OpenClaw 等开源 Agent 的部署与 Skills 开发经验；同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行原型，显著提升数据处理与开发效率。</p>
                     </div>
                     <div data-lang="en" style="display:none;">
-                        <p>LaTeX, SPSS, EViews; MS Office (passed Computer Proficiency Level 2 Exam); proficient with AI-assisted development tools including Claude Code and GitHub Copilot; skilled in Prompt Engineering and AI Agent workflows; experienced in deploying open-source Agents such as OpenClaw and developing Skills, significantly enhancing data processing and coding efficiency.</p>
+                        <p>LaTeX, SPSS, EViews; MS Office (passed Computer Proficiency Level 2 Exam); proficient with AI-assisted development tools including Claude Code and GitHub Copilot; skilled in Prompt Engineering and AI Agent workflows; experienced in deploying open-source Agents such as OpenClaw and developing Skills; also capable of Vibe Coding to rapidly turn innovative ideas into working prototypes, significantly enhancing data processing and development efficiency.</p>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">LaTeX</span>
@@ -1252,6 +1277,7 @@
                         <span class="skill-tag">GitHub Copilot</span>
                         <span class="skill-tag">Prompt Engineering</span>
                         <span class="skill-tag">AI Agent</span>
+                        <span class="skill-tag">Vibe Coding</span>
                     </div>
                 </div>
             </div>
@@ -1307,8 +1333,8 @@
 
         // Update hero bio
         document.getElementById('heroBio').textContent = lang === 'zh'
-            ? '我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础，熟练掌握 Python、R、SQL、C语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。我拥有较强的学习热情与自驱力，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续追求更高水平的理念与方法，在数据挖掘与量化研究领域不断拓展自己的能力边界。'
-            : 'I submitted a spatiotemporal prediction paper to KDD 2026 Research Track as first author, and won a Gold Medal (Top 5% globally) in the WorldQuant Quantitative Investment Competition, demonstrating full-stack quantitative research capabilities from deep learning modeling to Alpha factor mining. Additionally, I have accumulated hands-on data processing and risk control modeling experience through internships at Deloitte, Bank of Communications, and Sinopec Engineering, and have led the development of Python fuzzy matching and data standardization tools, excelling at using technology to solve real business pain points. As an undergraduate in Economics and Statistics at Beijing Technology and Business University (GPA 4.01/5.00), I possess a solid foundation in mathematics and statistics, am proficient in Python, R, SQL, and C, and can independently build end-to-end ML Pipelines from data cleansing and feature engineering to model optimization. I am also skilled in leveraging AI-assisted development tools like Claude Code, with practical experience in Prompt Engineering and AI Agent workflows, capable of building automated task flows using open-source Agents like OpenClaw, and possess Vibe Coding abilities to rapidly prototype innovative ideas. I have a strong passion for learning and self-motivation, willing to face the unknown and quickly adapt to new domains, continuously pushing the boundaries of my capabilities in data mining and quantitative research.';
+            ? '我以第一作者身份向 KDD 2026 Research Track 投稿时空预测论文，并在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），具备从深度学习建模到 Alpha 因子挖掘的全链路量化研究能力。我本科就读于北京工商大学经济统计学专业（GPA 4.01/5.00），拥有扎实的数学与统计学基础。此外，我在德勤、交通银行及中石化工程建设等多段实习中积累了真实业务场景下的数据处理与风控建模经验，并主导开发过 Python 模糊匹配与数据标准化工具，善于用技术手段解决实际业务痛点。我熟练掌握 Python、R、SQL、C 语言等编程语言，能够独立搭建从数据清洗、特征工程到模型调优的端到端机器学习 Pipeline；同时善于运用 Claude Code 等 AI 辅助开发工具提升编码效率，具备 Prompt Engineering 与 AI Agent 工作流的实践经验，能利用 OpenClaw 等开源 Agent 构建自动化任务流程，同时具备 Vibe Coding 能力，可快速将创新想法落地为可运行的原型。以雅思写作 AI 智能评审系统为例，我独立基于 Claude Code 构建了完整的 Agent Pipeline，以 SKILL.md 为调度入口串联题目解读、个性化批改、四维评分与网站自动生成四大模块，实现用户一条指令即可完成从投稿作文到输出学习网页的端到端全链路交付；系统后续成功从大作文平滑扩展至小作文，验证了模块化 Prompt 架构在真实产品场景下的可扩展性与工程落地能力。我的学习热情与自驱力较强，敢于直面未知并快速上手新业务，愿意主动走出舒适区，持续学习更高水平的理念与方法，期待在数据挖掘与量化研究岗位上为团队创造价值的同时不断提升自己的能力上限。'
+            : 'I submitted a spatiotemporal prediction paper to KDD 2026 Research Track as first author, and won a Gold Medal (Top 5% globally) in the WorldQuant Quantitative Investment Competition, demonstrating full-stack quantitative research capabilities from deep learning modeling to Alpha factor mining. As an undergraduate in Economics and Statistics at Beijing Technology and Business University (GPA 4.01/5.00), I possess a solid foundation in mathematics and statistics. Additionally, I have accumulated hands-on data processing and risk control modeling experience through internships at Deloitte, Bank of Communications, and Sinopec Engineering, and have led the development of Python fuzzy matching and data standardization tools, excelling at using technology to solve real business pain points. I am proficient in Python, R, SQL, and C, and can independently build end-to-end ML Pipelines from data cleansing and feature engineering to model optimization. I am also skilled in leveraging AI-assisted development tools like Claude Code, with practical experience in Prompt Engineering and AI Agent workflows, capable of building automated task flows using open-source Agents like OpenClaw, and possess Vibe Coding abilities to rapidly prototype innovative ideas. For example, I independently built a complete Agent Pipeline on Claude Code for an IELTS Writing AI Review System, using SKILL.md as the dispatch entry to chain together four modules — topic interpretation, personalized correction, four-dimensional scoring, and automatic website generation — enabling end-to-end delivery from essay submission to learning webpage output with a single command; the system was later successfully extended from Task 2 (essay) to Task 1 (report) via Bootstrapping, validating the extensibility and engineering viability of modular Prompt architectures in real product scenarios. I am driven by strong learning passion and self-motivation, willing to face the unknown and quickly adapt to new domains, eager to step out of my comfort zone, continuously learn higher-level concepts and methods, and aspire to create value for the team while constantly pushing my capability boundaries in data mining and quantitative research roles.';
 
         // Update location
         document.getElementById('heroLocation').textContent = lang === 'zh' ? '北京市朝阳区' : 'Chaoyang District, Beijing';
