@@ -471,6 +471,38 @@
             color: #5c5c58;
         }
 
+        /* ===== Framework Figure ===== */
+        .framework-figure {
+            margin: 1.2rem 0 0.6rem;
+            padding: 1rem;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .framework-figure:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .framework-figure img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .framework-figure figcaption {
+            margin-top: 0.7rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
         /* ===== Skills Section ===== */
         .skills-container {
             background: var(--card-bg);
@@ -936,12 +968,20 @@
             </div>
             <div class="card-body">
                 <div data-lang="zh">
+                    <figure class="framework-figure">
+                        <img src="orion_framework.png" alt="Orion 框架总览：Embedding → Belt Block → Fusion Block，三阶段渐进训练" loading="lazy">
+                        <figcaption>图 1 — Orion 框架总览：多尺度 Embedding、N 层 Belt Block（TE-CausGAT + Multihead Attention）与 Fusion Block，三阶段渐进训练策略</figcaption>
+                    </figure>
                     <p><strong>问题切入：</strong>现有时空 GNN 依赖对称邻接矩阵，无法区分"谁影响谁"，交通事故沿 A→B→C 单向传播拥堵，对称图却错误赋予 C→A 权重；且已有图学习方法缺乏机制验证学到的边权是否具有预测意义而非虚假相关。</p>
                     <p><strong>方法设计：</strong>提出 Orion 框架，核心 TE-CausGAT 模块基于 Granger 因果原理分段估计时变有向依赖矩阵，通过贝叶斯融合整合学习结构与先验邻接；首创预测一致性自验证——对节点 i 执行 mask 干预后测量节点 j 预测变化Δŷ_j，要求其与边权 C_{ij} 一致，训练中自动过滤未通过干预测试的虚假边。架构上 Belt Block 并行建模小时/日/周三尺度，三阶段渐进训练避免联合优化的局部最优。</p>
                     <p><strong>实验结果：</strong>5 个基准上取得 SOTA：METR-LA MAE 降低 6.60%，PEMS-08 降低 8.65%，流行病数据 CA/TX 分别降低 22.70% 和 37.73%。DREAM-3 基因调控网络有向图发现 AUC 达 0.6295，超越最强基线 CUTS 6.42%，验证所学结构与 ground-truth 因果关系的一致性</p>
                     <p><a href="orion-kdd2026.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> 查看完整论文 (PDF)</a></p>
                 </div>
                 <div data-lang="en" style="display:none;">
+                    <figure class="framework-figure">
+                        <img src="orion_framework.png" alt="Orion Framework Overview: Embedding → Belt Block → Fusion Block with Three-Stage Training" loading="lazy">
+                        <figcaption>Figure 1 — Orion Framework Overview: Multi-scale Embedding, N-layer Belt Block (TE-CausGAT + Multihead Attention) & Fusion Block, with Three-Stage Progressive Training</figcaption>
+                    </figure>
                     <p><strong>Problem Motivation:</strong> Existing spatiotemporal GNNs rely on symmetric adjacency matrices and cannot distinguish "who influences whom"; traffic accidents propagate congestion unidirectionally along A→B→C, yet symmetric graphs erroneously assign weight to C→A. Moreover, existing graph learning methods lack mechanisms to verify whether learned edge weights carry predictive significance rather than spurious correlation.</p>
                     <p><strong>Method Design:</strong> Proposed the Orion framework with a core TE-CausGAT module that estimates time-varying directed dependency matrices via Granger causality principles and integrates learned structures with prior adjacency through Bayesian fusion; pioneered prediction consistency self-validation—masking node i to measure prediction change Δŷj of node j, requiring consistency with edge weight Cij, and automatically filtering spurious edges failing the intervention test during training. Architecturally, Belt Block models three temporal scales (hourly/daily/weekly) in parallel, with three-stage progressive training to avoid joint optimization local optima.</p>
                     <p><strong>Experimental Results:</strong> Achieved SOTA across 5 benchmarks: METR-LA MAE reduced by 6.60%, PEMS-08 by 8.65%, epidemic datasets CA/TX reduced by 22.70% and 37.73% respectively. Directed graph discovery AUC on DREAM-3 gene regulatory network reached 0.6295, surpassing the strongest baseline CUTS by 6.42%, validating consistency between learned structures and ground-truth causal relationships.</p>
