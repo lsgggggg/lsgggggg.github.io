@@ -1021,6 +1021,56 @@
             <h2 data-zh="项目经历" data-en="Project Experience">项目经历</h2>
         </div>
 
+        <!-- C Course Design · Outpatient Scheduling -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="门诊预约排队系统（离散事件模拟 · pintia 满分）" data-en="Outpatient Appointment Scheduling System (Discrete-Event Simulation · Full Marks on PintiaOJ)">门诊预约排队系统（离散事件模拟 · pintia 满分）</div>
+                        <div class="card-subtitle" data-zh="个人项目 · C 程序设计课程设计" data-en="Individual Project · C Programming Course Design">个人项目 · C 程序设计课程设计</div>
+                    </div>
+                </div>
+                <span class="card-date">2026.06</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>问题建模：</strong>面向医院门诊"按号叫诊"场景，将医生服务过程抽象为单调推进的离散事件模拟：服务时间段 t 自 1 起逐段递增，每段依"当前号槽患者正在等待 → 80 岁以上老人优先 → 等待者中预约号最小者"的三级优先级确定接诊对象。针对题面中"到达时刻"与"预约号"两个语义相近的时间字段，通过比对输入输出样例反推其含义与行列对应，厘清规则边界。</p>
+                    <p><strong>数据结构与算法：</strong>利用"n 位患者的预约号恰构成 1…n 排列"这一性质，直接以预约号为数组下标组织到达时刻、ID、年龄等并行数组，实现 O(1) 定位、免去显式排序；患者 ID 以字符数组存储并原样读写，规避整型化导致的前导零丢失。主循环以"已就诊人数达到 n"为终止条件而非将 t 限定于 [1, n]，正确处理就诊时段越过 n 与空号跳过的情形，三级优先级则由条件分支的先后次序自然实现。</p>
+                    <p><strong>工程迭代与成果：</strong>初版因将时间段硬编码为 [1, n] 而遗漏患者、又因整型存储 ID 丢失前导零，仅得 4 分；经定位后改为计数终止与字符串 ID，第三次提交即通过全部测试点取得 30/30 满分。算法时间复杂度 O(n²)、空间复杂度 O(n)，在 n≈10⁴ 规模下最大测试点约 67 ms 通过；若数据规模继续增大，可引入最小堆将取号代价降至 O(log n)、整体优化为 O(n log n)。 <a href="https://github.com/lsgggggg/lsgggggg.github.io/blob/master/outpatient-queue.c" target="_blank" class="github-link"><i class="fas fa-file-code"></i>核心代码</a></p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Problem Modeling:</strong> For a hospital outpatient "call-by-number" scenario, the physician's service process is abstracted as a monotonically advancing discrete-event simulation: the service slot t increments from 1, and at each slot the patient to be served is decided by a three-tier priority — the holder of the current number is waiting → patients aged 80+ take precedence → the smallest appointment number among those waiting. To disambiguate the two semantically similar time fields ("arrival time" and "appointment number"), their meanings and row/column correspondence were reverse-derived by cross-checking the input/output sample.</p>
+                    <p><strong>Data Structures &amp; Algorithm:</strong> Exploiting the property that the n appointment numbers form exactly a permutation of 1…n, the appointment number is used directly as the array index for the parallel arrays of arrival time, ID, and age, achieving O(1) lookup without explicit sorting; patient IDs are stored as character arrays and read/written verbatim to avoid the loss of leading zeros from integer conversion. The main loop terminates on "patients treated reaches n" rather than confining t to [1, n], correctly handling service slots beyond n and skipped (empty) numbers, while the three-tier priority is realized naturally by the order of conditional branches.</p>
+                    <p><strong>Engineering Iteration &amp; Result:</strong> The initial version scored only 4 points — it missed patients by hard-coding the slot range as [1, n] and lost leading zeros by storing IDs as integers; after diagnosis, switching to count-based termination and string IDs passed all test cases on the third submission for a full 30/30. The algorithm runs in O(n²) time and O(n) space, clearing the largest test case in ≈67 ms at n≈10⁴; for larger inputs a min-heap can reduce the selection cost to O(log n), optimizing the whole to O(n log n). <a href="https://github.com/lsgggggg/lsgggggg.github.io/blob/master/outpatient-queue.c" target="_blank" class="github-link"><i class="fas fa-file-code"></i>Core Code</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- C Course Design · Greedy Elimination -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div>
+                        <div class="card-title" data-zh="贪心消消乐（二维前缀和 + 贪心模拟 · pintia 满分）" data-en="Greedy Elimination Game (2D Prefix Sums + Greedy Simulation · Full Marks on PintiaOJ)">贪心消消乐（二维前缀和 + 贪心模拟 · pintia 满分）</div>
+                        <div class="card-subtitle" data-zh="个人项目 · C 程序设计课程设计" data-en="Individual Project · C Programming Course Design">个人项目 · C 程序设计课程设计</div>
+                    </div>
+                </div>
+                <span class="card-date">2026.06</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>问题建模：</strong>面向 N×N（N≤100）消除游戏，实现贪心自动消除：每一步在所有不含黑洞的矩形中选取得分最大者，输出并累加，随后执行消除与重力下落，直至无正得分可取。针对题面未言明的坐标系，采用样例反证法确定 x 为列、y 为行——若设 x 为行则首步框选将含黑洞、与"矩形内不得含黑洞"相矛盾，据此固定行列对应。</p>
+                    <p><strong>二维前缀和加速：</strong>以二维前缀和同时维护"分数和"与"黑洞计数"两张表，使任意矩形求和与含黑洞判定均降至 O(1)；矩形寻优以四重循环按 x1、y1、x2、y2 升序枚举，仅当严格大于当前最优时方更新，从而在并列最大者中天然保留字典序最小解、无需额外比较，并在矩形已含黑洞时即时剪枝。重力下落对每列自下而上扫描、顶部补黑洞，规避一维数组原地搬移的覆盖冲突。</p>
+                    <p><strong>复杂度优化与成果：</strong>朴素逐格求和的单步寻优为 O(N⁶)（N=100 约 10¹² 次运算、远超时限），引入二维前缀和后建表 O(N²)、枚举求值 O(N⁴)，整体降两个数量级；N=100 最大测试点实测 1221 ms，安全处于 2000 ms 限内。初版因缺失重力下落仅得 6 分（且样例总分偶然正确，暴露"以聚合结果为唯一校验"之风险），补全后第二次提交取得 30/30 满分；如需进一步优化，可固定上下边界压缩列和、以最大子段和将单步降至 O(N³)。 <a href="https://github.com/lsgggggg/lsgggggg.github.io/blob/master/greedy-elimination.c" target="_blank" class="github-link"><i class="fas fa-file-code"></i>核心代码</a></p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>Problem Modeling:</strong> For an N×N (N≤100) elimination game, implemented greedy auto-elimination: each step selects the highest-scoring rectangle containing no black hole, outputs and accumulates it, then performs elimination and gravity falling until no positive score remains. For the coordinate system left unspecified by the problem, a sample-based reductio established that x is the column and y is the row — assuming x as the row would make the first selection include a black hole, contradicting the "no black hole inside the rectangle" rule.</p>
+                    <p><strong>2D Prefix-Sum Acceleration:</strong> Two prefix-sum tables — for "score sum" and "black-hole count" — reduce both rectangle summation and black-hole testing to O(1); rectangle optimization enumerates boundaries in ascending x1, y1, x2, y2 order and updates only on a strict improvement, thereby naturally retaining the lexicographically smallest among tied maxima without extra comparison, and prunes immediately once a rectangle already contains a black hole. Gravity falling scans each affected column bottom-up and refills the top with black holes, avoiding the overwrite conflict of in-place shifting within a 1D array.</p>
+                    <p><strong>Complexity Optimization &amp; Result:</strong> Naive per-cell summation makes single-step search O(N⁶) (≈10¹² operations at N=100, far over the limit); with 2D prefix sums, table construction is O(N²) and enumeration O(N⁴), lowering the cost by two orders of magnitude — the largest test case at N=100 measured 1221 ms, safely within the 2000 ms limit. The initial version, lacking gravity falling, scored only 6 points (its sample total happening to be correct, exposing the risk of validating solely by aggregate result); after completing the mechanism, the second submission achieved a full 30/30; further speedup to O(N³) per step is possible by fixing the top/bottom boundaries, compressing column sums, and solving a maximum-subarray problem. <a href="https://github.com/lsgggggg/lsgggggg.github.io/blob/master/greedy-elimination.c" target="_blank" class="github-link"><i class="fas fa-file-code"></i>Core Code</a></p>
+                </div>
+            </div>
+        </div>
+
         <!-- IELTS AI Agent -->
         <div class="card">
             <div class="card-header">
