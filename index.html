@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李时光 | Li Shiguang – Personal Homepage</title>
-    <meta name="description" content="Li Shiguang's personal homepage. Economics & Statistics undergraduate at BTBU, first-author CIKM 2026 paper, WorldQuant Gold Medalist, MCM/ICM Honorable Mention.">
+    <meta name="description" content="Li Shiguang's personal homepage. Economics & Statistics undergraduate at BTBU working across statistical modeling, data science, governed AI systems, and an ICLR 2027 submission.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
@@ -289,6 +289,32 @@
         .card:hover {
             box-shadow: var(--shadow);
             border-color: transparent;
+        }
+
+        .featured-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .card-logo.company-mark {
+            display: grid;
+            place-items: center;
+            padding: 0;
+            background: var(--primary);
+            color: var(--card-bg);
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .card-header {
@@ -736,7 +762,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#education" data-zh="教育背景" data-en="Education">教育背景</a></li>
             <li><a href="#internship" data-zh="实习经历" data-en="Internship">实习经历</a></li>
-            <li><a href="#publication" data-zh="论文发表" data-en="Publication">论文发表</a></li>
+            <li><a href="#publication" data-zh="研究论文" data-en="Research Paper">研究论文</a></li>
             <li><a href="#research" data-zh="科研经历" data-en="Research">科研经历</a></li>
             <li><a href="#projects" data-zh="项目经历" data-en="Projects">项目经历</a></li>
             <li><a href="#activities" data-zh="实践经历" data-en="Activities">实践经历</a></li>
@@ -776,9 +802,9 @@
         </div>
         <div class="hero-info">
             <h1 id="heroName">李时光</h1>
-            <div class="subtitle" id="heroSubtitle">经济统计学 · 北京工商大学</div>
+            <div class="subtitle" id="heroSubtitle">统计建模 · 数据科学 · AI 系统设计</div>
             <p class="bio" id="heroBio">
-                我本科就读于北京工商大学经济统计学专业，GPA 4.06/5.00，雅思 7 分，系统修读高等数学（上、下）、线性代数、概率论与数理统计、应用数理统计、回归分析、多元统计分析、时间序列分析、非参数统计、计量经济学、金融计量学、数据科学导论、大数据分析统计建模、数据库原理与应用、C程序设计、R软件基础及统计分析应用等课程，形成了扎实的数理统计、计量建模与数据处理基础。科研方面，我以第一作者身份向 CIKM 2026 Full Research Papers 投稿时空预测论文，并在北京工商大学衡佳妮教授课题组担任本科生研究助理，参与能源预测方向国家自然科学基金项目，持续关注时空神经网络、因果推断与金融时间序列预测。竞赛与项目方面，我在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），并以队长身份带队获得 2026 MCM/ICM 美赛 Problem B H 奖，具备从深度学习建模、Alpha 因子挖掘到鲁棒优化分析的综合研究能力。实践方面，我曾在德勤、交通银行和中石化工程建设实习，积累了数据处理、授信分析、财务风控与业务流程建模经验，并主导开发 Python 模糊匹配与数据标准化工具。技术上，我熟练使用 Python、R、SQL、C 及机器学习工具链，能够搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline，也具备 Prompt Engineering 与 AI Agent 工作流实践经验，能够将统计建模、量化研究和自动化开发能力结合到真实业务问题中。
+                我就读于北京工商大学经济统计学专业（GPA 4.01/5.00，90.6/100；雅思 7.0，四项均为 6.5），以统计建模为基础，专注于数据科学、时空神经网络与可治理 AI 系统。作为 Orion 第一作者，我的论文处于 ICLR 2027 投稿阶段，并在衡佳妮教授课题组参与国家自然科学基金能源预测项目。四段实习覆盖普联软件、德勤、交通银行与中石化工程建设：从财务数据治理、NL2Dashboard 和多 Agent 产品设计，到税务数据开发、信贷建模与运营风险分析，我持续将复杂业务问题转化为统一口径、模型、数据管线和可验收原型。熟练使用 Python、R、SQL、C、PyTorch 及 AI Agent 工具链；职业兴趣位于统计与机器学习、数据产品架构和行业决策的交叉处，擅长设计端到端系统并推动协作落地。
             </p>
         </div>
     </div>
@@ -804,11 +830,11 @@
                         <div class="card-subtitle" data-zh="经济统计学 · 学士" data-en="Economics and Statistics · Bachelor of Science">经济统计学 · 学士</div>
                     </div>
                 </div>
-                <span class="card-date">2023.09 – 2027.06</span>
+                <span class="card-date">2023.09 – 2027.07</span>
             </div>
             <div class="card-body">
                 <div class="edu-meta">
-                    <span class="edu-badge gpa"><i class="fas fa-chart-line"></i> GPA: 4.06 / 5.00</span>
+                    <span class="edu-badge gpa"><i class="fas fa-chart-line"></i> GPA: 4.01 / 5.00 · 90.6 / 100</span>
                 </div>
 
                 <p style="margin-top: 0.8rem;"><strong data-zh="专业课程" data-en="Core Courses">专业课程</strong></p>
@@ -872,6 +898,36 @@
             <h2 data-zh="实习经历" data-en="Internship Experience">实习经历</h2>
         </div>
 
+        <!-- Pansoft -->
+        <div class="card featured-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <div class="card-logo company-mark" aria-hidden="true">P</div>
+                    <div>
+                        <div class="card-title">
+                            <a href="https://www.pansoft.com" target="_blank" data-zh="普联软件股份有限公司" data-en="Pansoft Co., Ltd.">普联软件股份有限公司</a>
+                        </div>
+                        <div class="card-subtitle" data-zh="数据与 AI 解决方案开发实习生｜数字化转型组，数字化转型咨询部" data-en="Data &amp; AI Solutions Development Intern | Digital Transformation Group, Digital Transformation Consulting Division">数据与 AI 解决方案开发实习生｜数字化转型组，数字化转型咨询部</div>
+                    </div>
+                </div>
+                <span class="card-date">2026.06 – 2026.08</span>
+            </div>
+            <div class="card-body">
+                <div data-lang="zh">
+                    <p><strong>国家管网财务数据治理：</strong>参与已中标的国家管网财务数据治理及产品化建设项目投标准备，围绕资金管理、核算与报告、共享运营、费用报销四个业务域，协助组织数据架构、数据治理、数据产品与数据安全方案；结合 Ontology 思路参与数据资产目录、标准、质量、元数据/主数据、逻辑/实体模型和分级分类权限设计，并通过统一编码与“业务域—活动大类—活动项”三级业务活动口径串联业务、财务、物流和主数据记录。进一步以模拟数据验证智慧结账场景的语义视图、风险指标、查询追溯 API 与受约束 Dashboard JSON；该 Demo 用于方案可行性验证，不表述为甲方生产系统。</p>
+                    <p><strong>NL2Dashboard 研究与落地：</strong>主导自然语言生成可视化看板课题，两轮研究覆盖 37 个商业/开源方案及 11 个重点系统，形成主报告、5 份专题材料和 170+ 条文献依据；据此设计“MySQL/DuckDB → 受治理语义目录 → LLM 结构化需求 → 独立复核 → 确定性查询规划与权限注入 → 参数化 SQL → 图表规则与布局 → React/ECharts”的完整链路。语义目录覆盖 5 个业务域、6 个事实模型、21 个指标和 29 个维度；整改终验以 50 条 held-out 问题、108 次真实模型调用验证核心链路，五项准确率为 97.67%–100%，严重高风险错误为 0，最终形成约 3.6 万行应用代码、29 份 JSON Schema 契约及 Docker Compose 六服务交付包。</p>
+                    <p><strong>共享运营单据积压与风险分析：</strong>独立编制积压监控指标口径并以 SQL 实现取数、聚合、滞留时长和流入流出计算，覆盖积压量/金额、超期占比、处理时效、日均新增/清理量和净积压变动；设计自动放行、催办、挂起、升级人工四类处置路径，结合 7/14 日加权移动平均、工作日日历和 Little’s Law 估计消化周期并校验业务一致性。另设计费用预算异常识别路线，明确可解释基线、候选集成模型、SHAP/Permutation Importance 与 out-of-time 验证；机器学习部分为场景与技术方案设计，不添加未经实训验证的准确率或上线收益。</p>
+                    <p><strong>多 Agent 标书生成与产品化：</strong>在公司正式递交流程之外独立设计八阶段多 Agent PoC，以事实占位、跨单元接口摘要、红线扫描、图示双检和人在回路约束生成不确定性，形成 29 个可审计单元及归档渲染约 182 页、含 131 张表和 20 张图的文档产物；随后抽象为《智投·标书智能生成系统》v0.1 PRD，定义五层架构、六类 Agent、A–H 产物流转与质量门，以及 58 条功能需求、14 条 AI 专用需求和 10 项成功指标。正式中标文件由团队依公司流程编制，个人 PoC 不作为正式递交文件或中标原因表述。</p>
+                </div>
+                <div data-lang="en" style="display:none;">
+                    <p><strong>PipeChina Financial Data Governance:</strong> Supported tender preparation for the awarded Financial Data Governance and Productization program across treasury, accounting and reporting, shared services, and expense reimbursement. Contributed to data architecture, governance, product, and security design through an Ontology-oriented model spanning asset catalogs, standards, quality, metadata/master data, logical/physical models, and classified access control. Helped connect operational, financial, logistics, and master-data records through standardized identifiers and a three-level business-activity taxonomy. Used synthetic data to validate semantic views, risk metrics, query/lineage APIs, and constrained Dashboard JSON for a smart-close scenario; the demo established feasibility and is not presented as a client production system.</p>
+                    <p><strong>NL2Dashboard Research and Delivery:</strong> Led two structured studies covering 37 commercial/open-source solutions and 11 priority systems, producing a main report, five thematic reports, and 170+ references. Designed the full MySQL/DuckDB → governed semantic catalog → LLM-generated structured requirement → independent review → deterministic query planning and permission injection → parameterized SQL → chart rules and layout → React/ECharts pipeline. The catalog covered 5 domains, 6 fact models, 21 metrics, and 29 dimensions. Final remediation acceptance used 50 held-out questions and 108 live model calls; five core accuracy measures ranged from 97.67% to 100% with zero severe high-risk errors. The package comprised approximately 36,000 lines of application code, 29 JSON Schema contracts, and six Docker Compose services.</p>
+                    <p><strong>Shared-Service Backlog and Risk Analytics:</strong> Independently authored the backlog metric specification and implemented SQL for extraction, aggregation, dwell time, and inflow/outflow calculations, covering backlog count/amount, overdue ratio, SLA attainment, daily arrivals/clearance, and net backlog change. Designed auto-release, reminder, hold, and manual-escalation paths; combined 7/14-day weighted moving averages, working-day calendars, and Little’s Law to estimate clearance time and validate consistency. Also designed an expense-budget anomaly route with interpretable and ensemble candidates, SHAP/Permutation Importance, and out-of-time validation; this ML component is presented as a scenario and technical design without unverified accuracy or production-uplift claims.</p>
+                    <p><strong>Multi-Agent Proposal Generation and Productization:</strong> Independently designed an eight-stage multi-agent PoC outside the company’s formal submission process, constraining generation through mandatory factual placeholders, cross-unit interface summaries, red-line scans, diagram checks, and human-in-the-loop gates. It produced 29 auditable units and an archived approximately 182-page document with 131 tables and 20 figures. Productized the practice into the v0.1 PRD for the Zhitou Intelligent Proposal Generation System, defining five architectural layers, six agent types, A–H artifact flow and quality gates, 58 functional requirements, 14 AI-specific requirements, and 10 success metrics. The official winning submission remained a team-produced company deliverable; the personal PoC is not presented as the submitted bid or the reason for award.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Deloitte -->
         <div class="card">
             <div class="card-header">
@@ -881,7 +937,7 @@
                         <div class="card-title">
                             <a href="https://www2.deloitte.com/cn/zh.html" target="_blank" data-zh="德勤管理咨询（上海）有限公司" data-en="Deloitte Consulting (Shanghai) Co. Ltd. Beijing Branch">德勤管理咨询（上海）有限公司</a>
                         </div>
-                        <div class="card-subtitle" data-zh="税务与商务咨询部" data-en="Tax & Business Advisory">税务与商务咨询部</div>
+                        <div class="card-subtitle" data-zh="数据开发实习生｜数字化转型组，税务与商务咨询部" data-en="Data Development Intern, Digital Transformation Group, Tax &amp; Business Consulting Department">数据开发实习生｜数字化转型组，税务与商务咨询部</div>
                     </div>
                 </div>
                 <span class="card-date">2026.02 – 2026.03</span>
@@ -909,7 +965,7 @@
                         <div class="card-title">
                             <a href="https://www.bankcomm.com" target="_blank" data-zh="交通银行" data-en="Bank of Communications">交通银行</a>
                         </div>
-                        <div class="card-subtitle" data-zh="对公业务部" data-en="Corporate Banking">对公业务部</div>
+                        <div class="card-subtitle" data-zh="信贷数据建模实习生｜公司银行部" data-en="Credit Data Modeling Intern, Corporate Banking Department">信贷数据建模实习生｜公司银行部</div>
                     </div>
                 </div>
                 <span class="card-date">2025.07 – 2025.08</span>
@@ -935,7 +991,7 @@
                         <div class="card-title">
                             <a href="https://www.sinopec.com" target="_blank" data-zh="中石化石油工程建设有限公司" data-en="Sinopec Petroleum Engineering & Construction Co., LTD">中石化石油工程建设有限公司</a>
                         </div>
-                        <div class="card-subtitle" data-zh="财务部" data-en="Finance Dept.">财务部</div>
+                        <div class="card-subtitle" data-zh="运营数据风险建模实习生｜财务部" data-en="Operational Data Risk Modeling Intern, Finance Department">运营数据风险建模实习生｜财务部</div>
                     </div>
                 </div>
                 <span class="card-date">2024.07 – 2024.08</span>
@@ -957,14 +1013,14 @@
     <section class="section fade-in" id="publication">
         <div class="section-header">
             <i class="fas fa-file-alt"></i>
-            <h2 data-zh="论文发表" data-en="Publication">论文发表</h2>
+            <h2 data-zh="研究论文" data-en="Research Paper">研究论文</h2>
         </div>
         <div class="card pub-card">
             <div class="pub-title">Orion: Spatiotemporal Neural Networks with Self-Validating Directed Graphs for Traffic and Epidemic Forecasting</div>
             <div class="pub-meta">
                 <span class="pub-badge author" data-zh="第一作者（通讯）" data-en="First Author (Corresponding)">第一作者（通讯）</span>
-                <span class="pub-badge venue">CIKM 2026 Full Research Papers</span>
-                <span class="pub-badge status">Under Review</span>
+                <span class="pub-badge venue">ICLR 2027</span>
+                <span class="pub-badge status" data-zh="投稿中" data-en="Submission in Progress">投稿中</span>
                 <a href="https://github.com/lsgggggg/Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a>
             </div>
             <div class="card-body">
@@ -976,7 +1032,7 @@
                     <p><strong>问题切入：</strong>现有时空 GNN 依赖对称邻接矩阵，无法区分"谁影响谁"，交通事故沿 A→B→C 单向传播拥堵，对称图却错误赋予 C→A 权重；且已有图学习方法缺乏机制验证学到的边权是否具有预测意义而非虚假相关。</p>
                     <p><strong>方法设计：</strong>提出 Orion 框架，核心 TE-CausGAT 模块基于 Granger 因果原理分段估计时变有向依赖矩阵，通过贝叶斯融合整合学习结构与先验邻接；首创预测一致性自验证——对节点 <em>i</em> 执行 mask 干预后测量节点 <em>j</em> 预测变化 Δŷ<sub>j</sub>，要求其与边权 <em>C</em><sub>ij</sub> 一致，训练中自动过滤未通过干预测试的虚假边。架构上 Belt Block 并行建模小时/日/周三尺度，三阶段渐进训练避免联合优化的局部最优。</p>
                     <p><strong>实验结果：</strong>5 个基准上取得 SOTA：METR-LA MAE 降低 6.60%，PEMS-08 降低 8.65%，流行病数据 CA/TX 分别降低 22.70% 和 37.73%。DREAM-3 基因调控网络有向图发现 AUC 达 0.6295，超越最强基线 CUTS 6.42%，验证所学结构与 ground-truth 因果关系的一致性</p>
-                    <p><a href="orion-kdd2026.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> 查看完整论文 (PDF)</a></p>
+                    <p><strong>投稿状态：</strong>Orion 当前处于 ICLR 2027 投稿阶段；公开仓库保留该研究的既有脉络，投稿版本细节以会议流程允许公开的内容为准。</p>
                 </div>
                 <div data-lang="en" style="display:none;">
                     <figure class="framework-figure">
@@ -986,7 +1042,7 @@
                     <p><strong>Problem Motivation:</strong> Existing spatiotemporal GNNs rely on symmetric adjacency matrices and cannot distinguish "who influences whom"; traffic accidents propagate congestion unidirectionally along A→B→C, yet symmetric graphs erroneously assign weight to C→A. Moreover, existing graph learning methods lack mechanisms to verify whether learned edge weights carry predictive significance rather than spurious correlation.</p>
                     <p><strong>Method Design:</strong> Proposed the Orion framework with a core TE-CausGAT module that estimates time-varying directed dependency matrices via Granger causality principles and integrates learned structures with prior adjacency through Bayesian fusion; pioneered prediction consistency self-validation—masking node <em>i</em> to measure prediction change Δŷ<sub>j</sub> of node <em>j</em>, requiring consistency with edge weight <em>C</em><sub>ij</sub>, and automatically filtering spurious edges failing the intervention test during training. Architecturally, Belt Block models three temporal scales (hourly/daily/weekly) in parallel, with three-stage progressive training to avoid joint optimization local optima.</p>
                     <p><strong>Experimental Results:</strong> Achieved SOTA across 5 benchmarks: METR-LA MAE reduced by 6.60%, PEMS-08 by 8.65%, epidemic datasets CA/TX reduced by 22.70% and 37.73% respectively. Directed graph discovery AUC on DREAM-3 gene regulatory network reached 0.6295, surpassing the strongest baseline CUTS by 6.42%, validating consistency between learned structures and ground-truth causal relationships.</p>
-                    <p><a href="orion-kdd2026.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> View Full Paper (PDF)</a></p>
+                    <p><strong>Submission Status:</strong> Orion is currently in the ICLR 2027 submission process. The public repository preserves the existing research lineage; details of the submission version will follow the conference’s disclosure rules.</p>
                 </div>
             </div>
         </div>
@@ -1014,11 +1070,11 @@
             <div class="card-body">
                 <div data-lang="zh">
                     <p><strong>课题组方向与文献研读：</strong>课题组聚焦能源市场预测（煤炭、碳交易、风电、电力负荷）与金融时间序列预测两条主线，融合因果推断、大语言模型（LLM）、Transformer / LSTM 时序架构与多因子交易策略等前沿方法。系统精读领域顶会/顶刊最新工作，围绕时空建模、可解释 AI 与量化策略创新方向形成持续技术跟踪。</p>
-                    <p><strong>国家自然科学基金项目参与：</strong>作为团队成员参与导师主持的能源预测方向国自然项目，承担时空神经网络通用建模方向研究工作；完成一作论文提出 Orion 时空预测模型（CIKM 2026 在审），其中 TE-CausGAT 时变有向因果图框架在交通与流行病预测之外，为能源时空预测提供了可迁移的方法学基础。</p>
+                    <p><strong>国家自然科学基金项目参与：</strong>作为团队成员参与导师主持的能源预测方向国自然项目，承担时空神经网络通用建模方向研究工作；完成一作论文提出 Orion 时空预测模型，当前处于 ICLR 2027 投稿阶段，其中 TE-CausGAT 时变有向因果图框架在交通与流行病预测之外，为能源时空预测提供了可迁移的方法学基础。</p>
                 </div>
                 <div data-lang="en" style="display:none;">
                     <p><strong>Research Directions & Literature Review:</strong> The group focuses on two main lines: energy market forecasting (coal, carbon trading, wind power, electricity load) and financial time-series prediction, integrating frontier methods including causal inference, Large Language Models (LLM), Transformer / LSTM temporal architectures, and multi-factor trading strategies. Systematically reviewed the latest works from top venues, maintaining continuous technical tracking around spatiotemporal modeling, explainable AI, and quantitative strategy innovation.</p>
-                    <p><strong>NSFC Project Participation:</strong> As a team member, contributed to the advisor's National Natural Science Foundation of China project on energy forecasting, taking charge of research on general spatiotemporal neural network modeling; first-authored the Orion spatiotemporal prediction model paper (CIKM 2026 Under Review), whose TE-CausGAT time-varying directed causal graph framework — beyond traffic and epidemic forecasting — provides a transferable methodological foundation for energy spatiotemporal forecasting.</p>
+                    <p><strong>NSFC Project Participation:</strong> As a team member, contributed to the advisor's National Natural Science Foundation of China project on energy forecasting, taking charge of research on general spatiotemporal neural network modeling; first-authored the Orion spatiotemporal prediction paper, currently in the ICLR 2027 submission process. Its TE-CausGAT time-varying directed causal graph framework provides a transferable methodological foundation for energy spatiotemporal forecasting beyond the original traffic and epidemic settings.</p>
                 </div>
             </div>
         </div>
@@ -1271,12 +1327,12 @@
             </div>
             <div class="card-body">
                 <div data-lang="zh">
-                    <p><strong>技术创新：</strong>提出面向交通流量预测的深度学习模型，设计基于 KNN 的动态图注意力网络与多头自注意力融合模块，构建三周期输入及权重约束机制捕捉多尺度时空依赖；该工作为后续 CIKM 2026 投稿论文 Orion 框架奠定了基础。 <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
+                    <p><strong>技术创新：</strong>提出面向交通流量预测的深度学习模型，设计基于 KNN 的动态图注意力网络与多头自注意力融合模块，构建三周期输入及权重约束机制捕捉多尺度时空依赖；该工作为后续 Orion 研究奠定了基础，该论文当前处于 ICLR 2027 投稿阶段。 <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
                     <p><strong>实验验证：</strong>带领团队处理 PeMS 等 5 个大规模交通数据集（1000+ 监测点、10 万+ 时间步），预测 MAE 较基线降低 15–30%，长期预测误差增长率降低 50%；斩获北京市省级一等奖。</p>
                     <p><a href="statistical-modeling.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> 查看参赛论文 (PDF)</a></p>
                 </div>
                 <div data-lang="en" style="display:none;">
-                    <p><strong>Technical Innovation:</strong> Proposed a deep learning model for traffic flow prediction; designed a KNN-based dynamic graph attention network fused with multi-head self-attention module; constructed a three-period input and weight constraint mechanism to capture multi-scale spatiotemporal dependencies; this work laid the foundation for the subsequently submitted CIKM 2026 paper Orion framework. <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
+                    <p><strong>Technical Innovation:</strong> Proposed a deep learning model for traffic flow prediction; designed a KNN-based dynamic graph attention network fused with multi-head self-attention; and constructed three-period inputs with weight constraints to capture multi-scale spatiotemporal dependencies. This work established the research foundation for Orion, which is currently in the ICLR 2027 submission process. <a href="https://github.com/lsgggggg/2025-National-College-Statistical-Modeling-Competition-Orion" target="_blank" class="github-link"><i class="fab fa-github"></i>Code</a></p>
                     <p><strong>Experimental Validation:</strong> Led the team in processing 5 large-scale traffic datasets from PeMS and others (1,000+ monitoring points, 100,000+ time steps); prediction MAE reduced by 15–30% compared to baselines, long-term prediction error growth rate reduced by 50%; won Beijing provincial-level First Prize.</p>
                     <p><a href="statistical-modeling.pdf" target="_blank" class="github-link"><i class="fas fa-file-pdf"></i> View Competition Paper (PDF)</a></p>
                 </div>
@@ -1408,7 +1464,7 @@
             <div class="skills-row">
                 <div class="skill-cell">
                     <h3><i class="fas fa-language"></i> <span data-zh="语言技能" data-en="Language Skills">语言技能</span></h3>
-                    <p data-zh="雅思 7 分、六级 513 分、国际人才英语考试（中级）取得&quot;良好&quot;成绩" data-en="IELTS 7.0, CET-6: 513, ETIC (Intermediate) with &quot;Good&quot; rating">雅思 7 分、六级 513 分、国际人才英语考试（中级）取得"良好"成绩</p>
+                    <p data-zh="雅思总分 7.0（听力、阅读、写作、口语四项均为 6.5）、六级 513 分、国际人才英语考试（中级）取得&quot;良好&quot;成绩" data-en="IELTS 7.0 overall (6.5 in Listening, Reading, Writing, and Speaking), CET-6: 513, ETIC (Intermediate) with &quot;Good&quot; rating">雅思总分 7.0（听力、阅读、写作、口语四项均为 6.5）、六级 513 分、国际人才英语考试（中级）取得"良好"成绩</p>
                 </div>
                 <div class="skill-cell">
                     <h3><i class="fas fa-laptop-code"></i> <span data-zh="编程与数据分析" data-en="Programming & Data Analysis">编程与数据分析</span></h3>
@@ -1500,13 +1556,13 @@
         // Update hero
         document.getElementById('heroName').textContent = lang === 'zh' ? '李时光' : 'Li Shiguang';
         document.getElementById('heroSubtitle').textContent = lang === 'zh'
-            ? '经济统计学 · 北京工商大学'
-            : 'Economics & Statistics · Beijing Technology and Business University';
+            ? '统计建模 · 数据科学 · AI 系统设计'
+            : 'Statistical Modeling · Data Science · AI Systems Design';
 
         // Update hero bio
         document.getElementById('heroBio').textContent = lang === 'zh'
-            ? '我本科就读于北京工商大学经济统计学专业，GPA 4.06/5.00，雅思 7 分，系统修读高等数学（上、下）、线性代数、概率论与数理统计、应用数理统计、回归分析、多元统计分析、时间序列分析、非参数统计、计量经济学、金融计量学、数据科学导论、大数据分析统计建模、数据库原理与应用、C程序设计、R软件基础及统计分析应用等课程，形成了扎实的数理统计、计量建模与数据处理基础。科研方面，我以第一作者身份向 CIKM 2026 Full Research Papers 投稿时空预测论文，并在北京工商大学衡佳妮教授课题组担任本科生研究助理，参与能源预测方向国家自然科学基金项目，持续关注时空神经网络、因果推断与金融时间序列预测。竞赛与项目方面，我在 WorldQuant 量化投资大赛中获得金牌（全球前 5%），并以队长身份带队获得 2026 MCM/ICM 美赛 Problem B H 奖，具备从深度学习建模、Alpha 因子挖掘到鲁棒优化分析的综合研究能力。实践方面，我曾在德勤、交通银行和中石化工程建设实习，积累了数据处理、授信分析、财务风控与业务流程建模经验，并主导开发 Python 模糊匹配与数据标准化工具。技术上，我熟练使用 Python、R、SQL、C 及机器学习工具链，能够搭建从数据清洗、特征工程到模型调优的端到端 ML Pipeline，也具备 Prompt Engineering 与 AI Agent 工作流实践经验，能够将统计建模、量化研究和自动化开发能力结合到真实业务问题中。'
-            : 'I am an undergraduate majoring in Economics and Statistics at Beijing Technology and Business University, with a GPA of 4.06/5.00 and an IELTS score of 7.0. My coursework covers Advanced Mathematics (I & II), Linear Algebra, Probability Theory and Mathematical Statistics, Applied Mathematical Statistics, Regression Analysis, Multivariate Statistical Analysis, Time Series Analysis, Non-parametric Statistics, Econometrics, Financial Econometrics, Introduction to Data Science, Big Data Analysis and Statistical Modeling, Database Principles and Applications, C Programming, and R Software for Statistical Analysis, providing a solid foundation in mathematical statistics, econometric modeling, and data processing. In research, I submitted a spatiotemporal prediction paper to CIKM 2026 Full Research Papers as first author and currently serve as an undergraduate research assistant in Prof. Heng Jiani\'s research group at BTBU, participating in a National Natural Science Foundation of China project on energy forecasting while continuing to work on spatiotemporal neural networks, causal inference, and financial time-series prediction. In competitions and projects, I won a Gold Medal in the WorldQuant Quantitative Investment Competition (Top 5% globally) and led my team to an Honorable Mention in 2026 MCM/ICM Problem B, demonstrating integrated research capabilities from deep learning modeling and Alpha factor mining to robust optimization analysis. Through internships at Deloitte, Bank of Communications, and Sinopec Engineering, I gained practical experience in data processing, credit analysis, financial risk control, and business process modeling, and led the development of Python-based fuzzy matching and data standardization tools. Technically, I am proficient in Python, R, SQL, C, and machine-learning toolchains, capable of building end-to-end ML Pipelines from data cleansing and feature engineering to model tuning, with practical experience in Prompt Engineering and AI Agent workflows for applying statistical modeling, quantitative research, and automation development to real business problems.';
+            ? '我就读于北京工商大学经济统计学专业（GPA 4.01/5.00，90.6/100；雅思 7.0，四项均为 6.5），以统计建模为基础，专注于数据科学、时空神经网络与可治理 AI 系统。作为 Orion 第一作者，我的论文处于 ICLR 2027 投稿阶段，并在衡佳妮教授课题组参与国家自然科学基金能源预测项目。四段实习覆盖普联软件、德勤、交通银行与中石化工程建设：从财务数据治理、NL2Dashboard 和多 Agent 产品设计，到税务数据开发、信贷建模与运营风险分析，我持续将复杂业务问题转化为统一口径、模型、数据管线和可验收原型。熟练使用 Python、R、SQL、C、PyTorch 及 AI Agent 工具链；职业兴趣位于统计与机器学习、数据产品架构和行业决策的交叉处，擅长设计端到端系统并推动协作落地。'
+            : 'I am an Economics and Statistics undergraduate at Beijing Technology and Business University (GPA 4.01/5.00; 90.6/100; IELTS 7.0, with 6.5 in each component), working at the intersection of statistical modeling, data science, spatiotemporal neural networks, and governed AI systems. As first author of Orion, I am advancing the work through the ICLR 2027 submission process while contributing to an NSFC-funded energy forecasting project in the research group led by Prof. Heng Jiani. Across internships at Pansoft, Deloitte, Bank of Communications, and Sinopec Engineering, I have translated complex business problems into governed data definitions, models, pipelines, and testable prototypes—from financial data governance, NL2Dashboard, and multi-agent product design to tax data development, credit modeling, and operational risk analytics. I work with Python, R, SQL, C, PyTorch, and AI-agent toolchains. My interests sit at the intersection of statistical and machine-learning methods, data-product architecture, and industry decision-making, with an emphasis on designing end-to-end systems and driving collaborative delivery.';
 
         // Update location
         document.getElementById('heroLocation').textContent = lang === 'zh' ? '北京市朝阳区' : 'Chaoyang District, Beijing';
