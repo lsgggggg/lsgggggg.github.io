@@ -7,7 +7,7 @@
     <meta name="description" content="Li Shiguang's personal homepage. Economics & Statistics undergraduate at BTBU working across statistical modeling, data science, governed AI systems, and an ICLR 2027 full paper under review.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
@@ -25,12 +25,13 @@
     --shadow: none;
     --shadow-hover: none;
     --serif: 'Source Serif 4', 'Times New Roman', 'Noto Serif SC', 'Songti SC', SimSun, serif;
+    --sans: 'Avenir Next', 'PingFang SC', system-ui, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.85;
     color: var(--text);
     background: var(--bg);
@@ -136,32 +137,49 @@ html[lang='zh-CN'] .nav-links a { font-size: 15px; letter-spacing: .08em; }
 .contact-item a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 i.fas, i.fab { display: none; }
 .main-content { padding: 47px 0 0; }
-.section { margin-bottom: 55px; scroll-margin-top: 24px; }
-.section-header { display: block; padding-bottom: 9px; margin-bottom: 23px; border-bottom: 1.5px solid var(--primary); }
+.section { margin-bottom: 70px; scroll-margin-top: 28px; }
+.section-header { display: block; padding-bottom: 14px; margin-bottom: 31px; border-bottom: 1px solid var(--border); }
 .section-header h2 {
-    font-family: var(--serif);
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 600;
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 25px;
+    line-height: 1.4;
+    font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: .045em;
+    padding: 8px 14px;
+    background: #ebe5d9;
+    border-left: 3px solid #7a5b46;
 }
-html[lang='zh-CN'] .section-header h2 { font-size: 18px; letter-spacing: .16em; }
-.card { padding: 0 0 28px; margin-bottom: 28px; border: 0; border-bottom: 1px solid var(--border); background: transparent; box-shadow: none; border-radius: 0; }
+html[lang='zh-CN'] .section-header h2 { font-size: 25px; letter-spacing: .08em; }
+.card { padding: 0 0 37px; margin-bottom: 35px; border: 0; border-bottom: 1px solid var(--border); background: transparent; box-shadow: none; border-radius: 0; }
 .card:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
-.card-header { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-bottom: 12px; }
+.card-header { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-bottom: 23px; }
 .card-title-group { display: flex; align-items: start; flex: 1; min-width: 0; }
 .card-logo { display: none; }
-.card-title { font-size: 19px; line-height: 1.55; font-weight: 600; color: var(--primary); }
+.card-title { font-size: 23px; line-height: 1.5; font-weight: 700; color: var(--primary); }
 .card-title a { color: inherit; text-decoration: none; }
 .card-title a:hover { color: var(--accent); }
-.card-subtitle { font-size: 16px; line-height: 1.65; font-weight: 400; font-style: italic; color: var(--text-secondary); margin-top: 3px; }
-.card-date { flex-shrink: 0; white-space: nowrap; color: var(--text-light); font-size: 15px; padding-top: 3px; }
-.card-body { font-size: inherit; color: var(--text); line-height: 1.85; overflow-wrap: anywhere; }
-.card-body p { margin-bottom: 13px; }
+.card-subtitle { font-family: var(--sans); font-size: 14px; line-height: 1.7; font-weight: 400; color: var(--text-light); margin-top: 6px; }
+.card-date { font-family: var(--sans); flex-shrink: 0; white-space: nowrap; color: var(--text-light); font-size: 13px; padding-top: 5px; }
+.card-body { font-size: inherit; color: #3c3731; line-height: 1.85; overflow-wrap: anywhere; }
+.card-body p { margin-bottom: 28px; }
 .card-body p:last-child { margin-bottom: 0; }
 .card-body strong { color: var(--primary); font-weight: 600; }
+.card-body p > strong:first-child {
+    display: block;
+    margin-bottom: 9px;
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.55;
+    color: #754831;
+}
+#education .card-body p:has(> span[data-zh]) > strong:first-child {
+    display: inline;
+    margin-bottom: 0;
+}
 .edu-meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 3px 0 20px; }
 .edu-badge { display: inline-flex; padding: 0; background: transparent; color: var(--text); font-size: 16px; }
 .courses-grid { display: flex; flex-wrap: wrap; gap: 2px 0; margin-top: 6px; margin-bottom: 18px; }
@@ -169,8 +187,8 @@ html[lang='zh-CN'] .section-header h2 { font-size: 18px; letter-spacing: .16em; 
 .course-tag:not(:last-child)::after { content: ' / '; white-space: pre; color: #9a9388; padding: 0 6px; }
 .course-score { font-weight: 600; }
 .pub-card { padding-bottom: 36px; margin-bottom: 33px; }
-.pub-title { font-size: 22px; line-height: 1.5; font-weight: 600; margin-bottom: 9px; color: var(--primary); }
-.pub-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 0; margin-bottom: 21px; }
+.pub-title { font-size: 26px; line-height: 1.45; font-weight: 700; margin-bottom: 13px; color: var(--primary); }
+.pub-meta { font-family: var(--sans); display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 0; margin-bottom: 30px; }
 .pub-badge { font-size: 14px; line-height: 1.7; color: var(--text-secondary); background: transparent; padding: 0; font-weight: 400; }
 .pub-badge + .pub-badge { border-left: 1px solid var(--border); padding-left: 12px; margin-left: 12px; }
 .framework-figure { margin: 20px 0; text-align: center; }
@@ -180,7 +198,7 @@ html[lang='zh-CN'] .section-header h2 { font-size: 18px; letter-spacing: .16em; 
 .skills-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
 .skills-row + .skills-row { border-top: 1px solid var(--border); margin-top: 23px; padding-top: 23px; }
 .skill-cell { padding: 0; min-width: 0; }
-.skill-cell h3, .interests-cell h3 { font-size: 18px; line-height: 1.6; font-weight: 600; margin-bottom: 9px; color: var(--primary); }
+.skill-cell h3, .interests-cell h3 { font-family: var(--sans); font-size: 17px; line-height: 1.55; font-weight: 700; margin-bottom: 12px; color: #754831; }
 .skill-cell p { font-size: 16px; color: var(--text); line-height: 1.85; overflow-wrap: anywhere; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 5px 15px; margin-top: 12px; }
 .skill-tag { font-size: 15px; color: var(--text-secondary); background: transparent; padding: 0; }
@@ -219,20 +237,24 @@ html[lang='zh-CN'] .section-header h2 { font-size: 18px; letter-spacing: .16em; 
     .contact-col { gap: 9px 17px; }
     .contact-item { font-size: 13px; }
     .main-content { padding-top: 33px; }
-    .section { margin-bottom: 42px; }
-    .section-header { margin-bottom: 20px; }
-    .section-header h2, html[lang='zh-CN'] .section-header h2 { font-size: 15px; }
+    .section { margin-bottom: 49px; }
+    .section-header { margin-bottom: 25px; }
+    .section-header h2, html[lang='zh-CN'] .section-header h2 { font-size: 21px; padding: 7px 11px; }
     .card-header { flex-direction: column; gap: 5px; }
-    .card-title { font-size: 18px; }
-    .card-subtitle { font-size: 15px; }
+    .card-title { font-size: 21px; }
+    .card-subtitle { font-size: 13px; }
     .card-date { font-size: 13px; padding: 0; }
     .course-tag { font-size: 14px; }
-    .pub-title { font-size: 20px; }
+    .pub-title { font-size: 23px; }
     .pub-badge { font-size: 13px; }
     .pub-badge + .pub-badge { padding-left: 8px; margin-left: 8px; }
     .skills-row { grid-template-columns: 1fr; gap: 23px; }
     .skill-cell + .skill-cell { border-top: 1px solid var(--border); padding-top: 23px; }
     .footer p { font-size: 13px; overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) {
+    .card-body p > strong:first-child { font-size: 16px; margin-bottom: 8px; }
+    .card-body p { margin-bottom: 25px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
